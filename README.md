@@ -55,3 +55,11 @@ _Assume payment in coins (e.g. quarters)_
 Test `release_change` method
 when payment of 1 coin
 expect 1 coins returned
+
+### Test 3
+
+_Assume payment in coins (e.g. quarters)_
+
+Test `release_change` method
+when payment of 7 coin
+expect 7 coins returned
