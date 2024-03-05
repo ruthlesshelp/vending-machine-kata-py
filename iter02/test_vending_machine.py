@@ -200,7 +200,7 @@ def test_display_coins_when_137n_83d_41q_expect_display_has_25_pt_40():
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.NICKEL, 137)
     class_under_test.insert_coins(Coin.DIME, 83)
-    class_under_test.insert_coins(Coin.PENNY, 41)
+    class_under_test.insert_coins(Coin.QUARTER, 41)
 
     # Act
     actual = class_under_test.display
