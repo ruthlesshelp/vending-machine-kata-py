@@ -81,3 +81,27 @@ expect display does NOT show INSERT COIN
 Test `display` property
 when payment of 5 coins and `return_coins` pushed
 expect display shows INSERT COIN
+
+## Iter02: Accept Coins
+
+_As a vendor,_
+_I want a vending machine that accepts coins,_
+_so that I can collect money from the customer_
+
+The vending machine will accept valid coins (nickels, dimes, and quarters) and reject invalid ones (pennies).
+
+Coin values:
+- Penny = $0.01
+- Nickel = $0.05
+- Dime = $0.10
+- Quarter = $0.25
+
+When a valid coin is inserted the amount of the coin will be added to the current amount and the display will be updated.
+
+When there are no coins inserted, the machine displays INSERT COIN. Rejected coins are placed in the coin return.
+
+### Test 7
+
+Test `display` property
+when payment of 1 quarter
+expect display shows $0.25
