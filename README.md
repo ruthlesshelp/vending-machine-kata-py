@@ -111,3 +111,9 @@ expect display shows $0.25
 Test `display` property
 when payment of 5 quarter
 expect display shows $0.25
+
+### Test 9
+
+Test `display` property
+when payment of 1 nickel
+expect display shows $0.05

@@ -86,3 +86,14 @@ def test_display_when_5_quarter_payment_expect_display_1_pt_25():
 
     # Assert
     assert actual == '$1.25'
+
+def test_display_when_1_nickel_payment_expect_display_0_pt_05():
+    # Arrange
+    class_under_test = VendingMachine()
+    class_under_test.insert_nickel(1)
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == '$0.05'
