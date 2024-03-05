@@ -178,3 +178,9 @@ expect 11 rejects returned
 - Introduce the Coin enum
 - Reintroduce `insert_coins` that takes the enum as parameter
 - Combine the `insert_*` methods into the one method.
+
+### Test 17
+
+Test `return_coins` method
+when payment 17 slugs
+expect 17 rejects returned

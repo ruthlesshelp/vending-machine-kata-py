@@ -180,3 +180,16 @@ def test_return_coins_when_11_pennies_expect_11_rejects_returned():
 
     # Assert
     assert actual == expected
+
+def test_return_coins_when_17_slugs_expect_17_rejects_returned():
+    # Arrange
+    expected = {'rejects': 17}
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins('plug nickel', 5)
+    class_under_test.insert_coins('blank slug', 12)
+
+    # Act
+    actual = class_under_test.return_coins()
+
+    # Assert
+    assert actual == expected
