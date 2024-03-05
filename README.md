@@ -184,3 +184,9 @@ expect 11 rejects returned
 Test `return_coins` method
 when payment 17 slugs
 expect 17 rejects returned
+
+### Test 18
+
+Test `display' property
+when payment 137 nickels, 83 dimes, and 41 quarters
+expect display shows $25.40
