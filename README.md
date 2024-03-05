@@ -75,3 +75,9 @@ expect display shows INSERT COIN
 Test `display` property
 when payment of 1 coin
 expect display does NOT show INSERT COIN
+
+### Test 6
+
+Test `display` property
+when payment of 5 coins and `release_change` pushed
+expect display shows INSERT COIN
