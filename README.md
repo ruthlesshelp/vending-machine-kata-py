@@ -84,6 +84,8 @@ expect display shows INSERT COIN
 
 ## Iter02: Accept Coins
 
+Change working folder to `iter02`
+
 _As a vendor,_
 _I want a vending machine that accepts coins,_
 _so that I can collect money from the customer_
