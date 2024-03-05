@@ -119,3 +119,14 @@ def test_display_when_1_dime_payment_expect_display_0_pt_10():
 
     # Assert
     assert actual == '$0.10'
+
+def test_display_when_43_dimes_payment_expect_display_4_pt_30():
+    # Arrange
+    class_under_test = VendingMachine()
+    class_under_test.insert_dime(43)
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == '$4.30'

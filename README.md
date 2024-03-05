@@ -129,3 +129,9 @@ expect display shows $0.65
 Test `display` property
 when payment of 1 dime
 expect display shows $0.10
+
+### Test 12
+
+Test `display` property
+when payment of 43 dimes
+expect display shows $4.30
