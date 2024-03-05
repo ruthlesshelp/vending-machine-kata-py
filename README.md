@@ -105,3 +105,9 @@ When there are no coins inserted, the machine displays INSERT COIN. Rejected coi
 Test `display` property
 when payment of 1 quarter
 expect display shows $0.25
+
+### Test 8
+
+Test `display` property
+when payment of 5 quarter
+expect display shows $0.25

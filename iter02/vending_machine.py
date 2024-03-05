@@ -8,5 +8,6 @@ class VendingMachine:
         return self.coins
     
     def insert_coin(self, coins: int):
-        self.display = '$0.25'
+        amount = coins * 0.25
+        self.display = f'${amount}'
         self.coins += coins
