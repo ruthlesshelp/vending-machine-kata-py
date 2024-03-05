@@ -109,8 +109,8 @@ expect display shows $0.25
 ### Test 8
 
 Test `display` property
-when payment of 5 quarter
-expect display shows $0.25
+when payment of 5 quarters
+expect display shows $1.25
 
 ### Test 9
 
@@ -141,3 +141,9 @@ expect display shows $4.30
 Test `display` property
 when payment of 18 nickels
 expect display shows $0.90
+
+### Test 14
+
+Test `display` property
+when payment of 4 quarters
+expect display shows $1.00
