@@ -55,6 +55,7 @@ def test_getting_started():
 Running:
 ```zsh
 (venv) $ pytest getting_started/test_vending_machine.py
+```
 
 Returns:
 ```zsh
@@ -84,6 +85,7 @@ ERROR getting_started/test_vending_machine.py
 Running:
 ```zsh
 (venv) $ pytest getting_started/test_vending_machine.py
+```
 
 Returns:
 ```zsh
