@@ -10,7 +10,7 @@ def test_return_coins_when_no_payment_expect_0_returned():
     actual = class_under_test.return_coins()
 
     # Assert
-    assert actual['quarters'] == 0
+    assert 'quarters' not in actual
 
 def test_return_coins_when_1_coin_payment_expect_1_coin_returned():
     # Arrange
@@ -162,6 +162,18 @@ def test_return_coins_when_3n_5d_7q_expect_3n_5d_7q_returned():
     class_under_test.insert_nickels(3)
     class_under_test.insert_dimes(5)
     class_under_test.insert_quarters(7)
+
+    # Act
+    actual = class_under_test.return_coins()
+
+    # Assert
+    assert actual == expected
+
+def test_return_coins_when_11_pennies_expect_11_rejects_returned():
+    # Arrange
+    expected = {'rejects': 11}
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins('penny', 11)
 
     # Act
     actual = class_under_test.return_coins()

@@ -166,3 +166,9 @@ NOTE: All tests continue to pass, but `coin_return` needs test scenarios.
 Test `return_coins` method
 when payment 3 nickels, 5 dimes, and 7 quarters
 expect 3 nickels, 5 dimes, and 7 quarters returned
+
+### Test 16
+
+Test `return_coins` method
+when payment 11 pennies
+expect 11 rejects returned
