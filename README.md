@@ -192,3 +192,25 @@ expect 17 rejects returned
 Test `display' property
 when payment 137 nickels, 83 dimes, and 41 quarters
 expect display shows $25.40
+
+## Iter03: Select Product
+
+Change working folder to `iter03`
+
+_As a vendor,_ 
+_I want customers to select products,_ 
+_so that I can give them an incentive to put money in the machine_ 
+
+There are three products:
+- cola for $1.00
+- chips for $0.50
+- candy for $0.65
+
+When the respective button is pressed and enough money has been inserted, the product is dispensed and the machine displays THANK YOU.
+
+If the display is checked again, it will display INSERT COIN and the current amount will be set to $0.00.
+
+If there is not enough money inserted then the machine displays PRICE and the price of the item and subsequent checks of the display will display
+either INSERT COIN or the current amount as appropriate.
+
+### Test 19
