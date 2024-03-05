@@ -13,7 +13,7 @@ def test_return_coins_when_no_payment_expect_0_returned():
 def test_return_coins_when_1_coin_payment_expect_1_coin_returned():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_coin(1)
+    class_under_test.insert_quarters(1)
 
     # Act
     actual = class_under_test.return_coins()
@@ -24,7 +24,7 @@ def test_return_coins_when_1_coin_payment_expect_1_coin_returned():
 def test_return_coins_when_7_coin_payment_expect_7_coin_returned():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_coin(7)
+    class_under_test.insert_quarters(7)
 
     # Act
     actual = class_under_test.return_coins()
@@ -45,7 +45,7 @@ def test_display_when_0_coin_payment_expect_display_shows_insert_coin():
 def test_display_when_1_coin_payment_expect_display_not_insert_coin():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_coin(1)
+    class_under_test.insert_quarters(1)
 
     # Act
     actual = class_under_test.display
@@ -56,7 +56,7 @@ def test_display_when_1_coin_payment_expect_display_not_insert_coin():
 def test_display_when_5_coin_payment_and_return_coins_expect_display_insert_coin():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_coin(5)
+    class_under_test.insert_quarters(5)
     class_under_test.return_coins()
 
     # Act
@@ -68,7 +68,7 @@ def test_display_when_5_coin_payment_and_return_coins_expect_display_insert_coin
 def test_display_when_1_quarter_payment_expect_display_0_pt_25():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_coin(1)
+    class_under_test.insert_quarters(1)
 
     # Act
     actual = class_under_test.display
@@ -79,7 +79,7 @@ def test_display_when_1_quarter_payment_expect_display_0_pt_25():
 def test_display_when_5_quarter_payment_expect_display_1_pt_25():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_coin(5)
+    class_under_test.insert_quarters(5)
 
     # Act
     actual = class_under_test.display
@@ -90,7 +90,7 @@ def test_display_when_5_quarter_payment_expect_display_1_pt_25():
 def test_display_when_1_nickel_payment_expect_display_0_pt_05():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_nickel(1)
+    class_under_test.insert_nickels(1)
 
     # Act
     actual = class_under_test.display
@@ -101,7 +101,7 @@ def test_display_when_1_nickel_payment_expect_display_0_pt_05():
 def test_display_when_13_nickels_payment_expect_display_0_pt_65():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_nickel(13)
+    class_under_test.insert_nickels(13)
 
     # Act
     actual = class_under_test.display
@@ -112,7 +112,7 @@ def test_display_when_13_nickels_payment_expect_display_0_pt_65():
 def test_display_when_1_dime_payment_expect_display_0_pt_10():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_dime(1)
+    class_under_test.insert_dimes(1)
 
     # Act
     actual = class_under_test.display
@@ -123,7 +123,7 @@ def test_display_when_1_dime_payment_expect_display_0_pt_10():
 def test_display_when_43_dimes_payment_expect_display_4_pt_30():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_dime(43)
+    class_under_test.insert_dimes(43)
 
     # Act
     actual = class_under_test.display
@@ -134,7 +134,7 @@ def test_display_when_43_dimes_payment_expect_display_4_pt_30():
 def test_display_when_18_nickels_payment_expect_display_0_pt_65():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_nickel(18)
+    class_under_test.insert_nickels(18)
 
     # Act
     actual = class_under_test.display
@@ -145,7 +145,7 @@ def test_display_when_18_nickels_payment_expect_display_0_pt_65():
 def test_display_when_4_quarter_payment_expect_display_1_pt_00():
     # Arrange
     class_under_test = VendingMachine()
-    class_under_test.insert_coin(4)
+    class_under_test.insert_quarters(4)
 
     # Act
     actual = class_under_test.display

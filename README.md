@@ -147,3 +147,16 @@ expect display shows $0.90
 Test `display` property
 when payment of 4 quarters
 expect display shows $1.00
+
+### Refactoring
+
+- changed property `coins` to `quarters`
+- changed `insert_coins` to `insert_quarters`
+- added `total_amount` property to track total
+- created private `_handle_coins` to consolidate:
+  * total calculation
+  * display format
+- added `INSERT_COIN` constant when no coins
+- added constants for the four types of coins
+
+NOTE: All tests continue to pass, but `coin_return` needs test scenarios.
