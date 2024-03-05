@@ -47,3 +47,11 @@ _When the return coins button is pressed, the money the customer has placed in t
 Test `release_change` method
 when no payment (i.e., no coins inserted)
 expect 0 in coins returned
+
+### Test 2
+
+_Assume payment in coins (e.g. quarters)_
+
+Test `release_change` method
+when payment of 1 coin
+expect 1 coins returned
