@@ -172,3 +172,9 @@ expect 3 nickels, 5 dimes, and 7 quarters returned
 Test `return_coins` method
 when payment 11 pennies
 expect 11 rejects returned
+
+### Refactoring
+
+- Introduce the Coin enum
+- Reintroduce `insert_coins` that takes the enum as parameter
+- Combine the `insert_*` methods into the one method.

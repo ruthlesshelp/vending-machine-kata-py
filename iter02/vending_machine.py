@@ -1,8 +1,10 @@
-# Potential coins
-PENNY = 'penny'  # Not acceptable
-NICKEL = 'nickel'
-DIME = 'dime'
-QUARTER = 'quarter'
+from enum import Enum
+
+class Coin(Enum):
+    PENNY = 'penny'  # Not acceptable
+    NICKEL = 'nickel'
+    DIME = 'dime'
+    QUARTER = 'quarter'
 
 # Message when no coins
 INSERT_COIN = 'INSERT COIN'
@@ -31,27 +33,15 @@ class VendingMachine:
 
         return return_slot
 
-    def insert_coins(self, coin_type: str, coins: int):
-        self._handle_coins(coins, coin_type)
-
-    def insert_nickels(self, coins: int):
-        self._handle_coins(coins, NICKEL)
-
-    def insert_dimes(self, coins: int):
-        self._handle_coins(coins, DIME)
-
-    def insert_quarters(self, coins: int):
-        self._handle_coins(coins, QUARTER)
-
-    def _handle_coins(self, coins: int, coin_type: str):
+    def insert_coins(self, coin_type: Coin, coins: int):
         amount = 0
-        if coin_type == QUARTER:
+        if coin_type == Coin.QUARTER:
             self.quarters += coins
             amount = coins * 0.25
-        elif coin_type == NICKEL:
+        elif coin_type == Coin.NICKEL:
             self.nickels += coins
             amount = coins * 0.05
-        elif coin_type == DIME:
+        elif coin_type == Coin.DIME:
             self.dimes += coins
             amount = coins * 0.10
         else:
