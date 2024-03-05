@@ -36,8 +36,8 @@ def test_getting_started():
 
 Working folder: `iter01`
 
-> As a customer
-> I want to have my money returned
+> As a customer, 
+> I want to have my money returned, 
 > So that I can change my mind about buying stuff from the vending machine
 
 _When the return coins button is pressed, the money the customer has placed in the machine is returned and the display shows INSERT COIN._
@@ -61,7 +61,7 @@ expect 1 coins returned
 _Assume payment in coins (e.g. quarters)_
 
 Test `return_coins` method
-when payment of 7 coin
+when payment of 7 coins
 expect 7 coins returned
 
 ### Test 4
