@@ -123,3 +123,9 @@ expect display shows $0.05
 Test `display` property
 when payment of 13 nickels
 expect display shows $0.65
+
+### Test 11
+
+Test `display` property
+when payment of 1 dime
+expect display shows $0.10

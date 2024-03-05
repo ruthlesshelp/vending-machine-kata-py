@@ -1,6 +1,7 @@
 class VendingMachine:
     def __init__(self):
         self.nickels = 0
+        self.dimes = 0
         self.coins = 0
         self.display = 'INSERT COIN'
 
@@ -17,3 +18,7 @@ class VendingMachine:
         amount = coins * 0.05
         self.display = f'${amount}'
         self.nickels += coins
+
+    def insert_dime(self, coins: int):
+        self.dimes += coins
+        self.display = '$0.10'
