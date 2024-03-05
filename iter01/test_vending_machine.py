@@ -31,3 +31,13 @@ def test_release_change_when_7_coin_payment_expect_7_coin_returned():
 
     # Assert
     assert actual == 7
+
+def test_display_when_0_coin_payment_expect_display_shows_insert_coin():
+    # Arrange
+    class_under_test = VendingMachine()
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == 'INSERT COIN'

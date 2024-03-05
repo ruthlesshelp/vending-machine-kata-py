@@ -63,3 +63,9 @@ _Assume payment in coins (e.g. quarters)_
 Test `release_change` method
 when payment of 7 coin
 expect 7 coins returned
+
+### Test 4
+
+Test `display` property
+when no payment (i.e., no coins inserted)
+expect display shows INSERT COIN
