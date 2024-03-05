@@ -3,7 +3,7 @@ class VendingMachine:
         self.coins = 0
         self.display = 'INSERT COIN'
 
-    def release_change(self):
+    def return_coins(self):
         self.display = 'INSERT COIN'
         return self.coins
     

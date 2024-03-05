@@ -44,7 +44,7 @@ _When the return coins button is pressed, the money the customer has placed in t
 
 ### Test 1
 
-Test `release_change` method
+Test `return_coins` method
 when no payment (i.e., no coins inserted)
 expect 0 in coins returned
 
@@ -52,7 +52,7 @@ expect 0 in coins returned
 
 _Assume payment in coins (e.g. quarters)_
 
-Test `release_change` method
+Test `return_coins` method
 when payment of 1 coin
 expect 1 coins returned
 
@@ -60,7 +60,7 @@ expect 1 coins returned
 
 _Assume payment in coins (e.g. quarters)_
 
-Test `release_change` method
+Test `return_coins` method
 when payment of 7 coin
 expect 7 coins returned
 
@@ -79,5 +79,5 @@ expect display does NOT show INSERT COIN
 ### Test 6
 
 Test `display` property
-when payment of 5 coins and `release_change` pushed
+when payment of 5 coins and `return_coins` pushed
 expect display shows INSERT COIN
