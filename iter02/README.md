@@ -105,6 +105,6 @@ expect 17 rejects returned
 
 ## Test 18
 
-Test `display' property
+Test `display` property
 when payment 137 nickels, 83 dimes, and 41 quarters
 expect display shows $25.40
