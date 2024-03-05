@@ -36,11 +36,11 @@ def test_getting_started():
 
 Working folder: `iter01`
 
-> As a customer, 
-> I want to have my money returned, 
-> So that I can change my mind about buying stuff from the vending machine
+_As a customer,_
+_I want to have my money returned_
+_So that I can change my mind about buying stuff from the vending machine_
 
-_When the return coins button is pressed, the money the customer has placed in the machine is returned and the display shows INSERT COIN._
+When the return coins button is pressed, the money the customer has placed in the machine is returned and the display shows INSERT COIN.
 
 ### Test 1
 
