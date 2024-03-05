@@ -16,7 +16,7 @@ class VendingMachine:
 
     def insert_nickel(self, coins: int):
         amount = coins * 0.05
-        self.display = f'${amount}'
+        self.display = f'${amount:.2f}'
         self.nickels += coins
 
     def insert_dime(self, coins: int):
