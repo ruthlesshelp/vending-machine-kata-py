@@ -14,5 +14,6 @@ class VendingMachine:
         self.coins += coins
 
     def insert_nickel(self, coins: int):
-        self.display = '$0.05'
+        amount = coins * 0.05
+        self.display = f'${amount}'
         self.nickels += coins
