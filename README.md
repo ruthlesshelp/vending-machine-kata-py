@@ -29,3 +29,21 @@ def test_getting_started():
 ```
 
 3. Create the `VendingMachine` class in the `vending_machine.py` file with just enough code to pass the test.
+
+# Iterations
+
+## Iter01: Return Coins
+
+Working folder: `iter01`
+
+> As a customer
+> I want to have my money returned
+> So that I can change my mind about buying stuff from the vending machine
+
+_When the return coins button is pressed, the money the customer has placed in the machine is returned and the display shows INSERT COIN._
+
+### Test 1
+
+Test `release_change` method
+when no payment (i.e., no coins inserted)
+expect 0 in coins returned
