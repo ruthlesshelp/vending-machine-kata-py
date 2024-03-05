@@ -69,3 +69,9 @@ expect 7 coins returned
 Test `display` property
 when no payment (i.e., no coins inserted)
 expect display shows INSERT COIN
+
+### Test 5
+
+Test `display` property
+when payment of 1 coin
+expect display does NOT show INSERT COIN

@@ -7,4 +7,5 @@ class VendingMachine:
         return self.coins
     
     def insert_coin(self, coins: int):
+        self.display = ''
         self.coins += coins

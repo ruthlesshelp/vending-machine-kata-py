@@ -41,3 +41,14 @@ def test_display_when_0_coin_payment_expect_display_shows_insert_coin():
 
     # Assert
     assert actual == 'INSERT COIN'
+
+def test_display_when_1_coin_payment_expect_display_not_insert_coin():
+    # Arrange
+    class_under_test = VendingMachine()
+    class_under_test.insert_coin(1)
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual != 'INSERT COIN'
