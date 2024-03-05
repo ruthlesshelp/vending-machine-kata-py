@@ -1,3 +1,5 @@
+# test_vending_machine.py
+
 from vending_machine import VendingMachine
 
 def test_return_coins_when_no_payment_expect_0_returned():
@@ -8,7 +10,7 @@ def test_return_coins_when_no_payment_expect_0_returned():
     actual = class_under_test.return_coins()
 
     # Assert
-    assert actual == 0
+    assert actual['quarters'] == 0
 
 def test_return_coins_when_1_coin_payment_expect_1_coin_returned():
     # Arrange
@@ -19,7 +21,7 @@ def test_return_coins_when_1_coin_payment_expect_1_coin_returned():
     actual = class_under_test.return_coins()
 
     # Assert
-    assert actual == 1
+    assert actual['quarters'] == 1
 
 def test_return_coins_when_7_coin_payment_expect_7_coin_returned():
     # Arrange
@@ -30,7 +32,7 @@ def test_return_coins_when_7_coin_payment_expect_7_coin_returned():
     actual = class_under_test.return_coins()
 
     # Assert
-    assert actual == 7
+    assert actual['quarters'] == 7
 
 def test_display_when_0_coin_payment_expect_display_shows_insert_coin():
     # Arrange
@@ -152,3 +154,17 @@ def test_display_when_4_quarter_payment_expect_display_1_pt_00():
 
     # Assert
     assert actual == '$1.00'
+
+def test_return_coins_when_3n_5d_7q_expect_3n_5d_7q_returned():
+    # Arrange
+    expected = {'nickels': 3, 'dimes': 5, 'quarters': 7}
+    class_under_test = VendingMachine()
+    class_under_test.insert_nickels(3)
+    class_under_test.insert_dimes(5)
+    class_under_test.insert_quarters(7)
+
+    # Act
+    actual = class_under_test.return_coins()
+
+    # Assert
+    assert actual == expected

@@ -160,3 +160,9 @@ expect display shows $1.00
 - added constants for the four types of coins
 
 NOTE: All tests continue to pass, but `coin_return` needs test scenarios.
+
+### Test 15
+
+Test `return_coins` method
+when payment 3 nickels, 5 dimes, and 7 quarters
+expect 3 nickels, 5 dimes, and 7 quarters returned

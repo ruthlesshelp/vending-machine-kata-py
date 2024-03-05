@@ -18,7 +18,15 @@ class VendingMachine:
 
     def return_coins(self):
         self.display = INSERT_COIN
-        return self.quarters
+        return_slot = {'nickels': 0, 'dimes': 0, 'quarters': 0}
+        if self.nickels > 0:
+            return_slot['nickels'] = self.nickels
+        if self.dimes > 0:
+            return_slot['dimes'] = self.dimes
+        if self.quarters >0:
+            return_slot['quarters'] = self.quarters
+
+        return return_slot
 
     def insert_nickels(self, coins: int):
         self._handle_coins(coins, NICKEL)
