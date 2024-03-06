@@ -17,7 +17,21 @@ class VendingMachine:
         self.dimes = 0
         self.quarters = 0
         self.rejects = 0
-        self.display = INSERT_COIN
+        self._display = INSERT_COIN
+
+    # properties
+    def get_display(self):
+        current_display = self._display
+
+        if self._display == 'THANK YOU':
+            self._display = '$0.00'
+
+        return current_display
+    
+    def set_display(self, display):
+        self._display = display
+
+    display = property(get_display, set_display)
 
     def return_coins(self):
         self.display = INSERT_COIN

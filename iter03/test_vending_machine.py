@@ -244,3 +244,18 @@ def test_select_cola_with_payment_4_quarters_expect_1_cola_is_dispensed():
 
     # Assert
     assert actual == expected
+
+def test_display_when_4q_and_select_cola_and_check_display_expect_next_display_0_pt_00():
+    # Arrange
+    expected = '$0.00'
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins(Coin.QUARTER, 4)
+    class_under_test.select_cola()
+    current_display = class_under_test.display
+    assert current_display == 'THANK YOU'
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == expected
