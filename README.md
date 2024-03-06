@@ -228,3 +228,10 @@ expect display shows THANK YOU
 Test `select_chips` method
 when payment 3 nickels (not enough money)
 expect chips is not dispensed
+
+### Test 30
+
+Test `display` property
+when payment 3 nickels (not enough money)
+and chips is pressed
+expect display doesn't show THANK YOU
