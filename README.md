@@ -125,3 +125,7 @@ If there is not enough money inserted then the machine displays PRICE and the pr
 either INSERT COIN or the current amount as appropriate.
 
 ### Test 19
+
+Test `select_cola` method
+when payment 4 quarters
+expect 1 cola is dispensed

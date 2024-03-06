@@ -49,3 +49,6 @@ class VendingMachine:
 
         self.total_amount += amount
         self.display = f'${self.total_amount:.2f}'
+
+    def select_cola(self):
+        return { 'cola': 1 }
