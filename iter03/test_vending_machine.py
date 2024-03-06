@@ -320,3 +320,15 @@ def test_current_amount_when_payment_3q_select_cola_and_check_display_expect_cur
 
     # Assert
     assert actual == expected
+
+def test_select_chips_when_payment_2q_select_chips_expect_1_chips_dispensed():
+    # Arrange
+    expected = { 'chips': 1 }
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins(Coin.QUARTER, 2)
+    
+    # Act
+    actual = class_under_test.select_chips()
+
+    # Assert
+    assert actual == expected

@@ -208,3 +208,11 @@ when payment 3 quarters (not enough money)
 and cola is pressed
 and display shows PRICE $1.00
 expect current amount is $0.75
+
+### Test 27
+
+_Let's implement the chips for $0.50_
+
+Test `select_chips` method
+when payment 2 quarters
+expect 1 chips is dispensed

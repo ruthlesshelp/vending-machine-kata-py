@@ -88,3 +88,6 @@ class VendingMachine:
             self.display = 'PRICE $1.00'
 
         return dispense
+
+    def select_chips(self):
+        return { 'chips': 1 }
