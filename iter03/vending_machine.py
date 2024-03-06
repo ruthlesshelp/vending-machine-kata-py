@@ -51,6 +51,10 @@ class VendingMachine:
         self.display = f'${self.total_amount:.2f}'
 
     def select_cola(self):
-        self.display = 'THANK YOU'
+        dispense = {}
 
-        return { 'cola': 1 }
+        if self.total_amount >= 1.00:
+            dispense['cola'] = 1
+            self.display = 'THANK YOU'
+
+        return dispense
