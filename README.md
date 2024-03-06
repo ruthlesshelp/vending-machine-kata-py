@@ -14,18 +14,41 @@ The primary purpose of this kata is to offer a moderately complex challenge that
 
 #### Just need the TL;DR?
 
-```zsh
-$ python3 --version
-Python 3.11.7
+1. Use Python >= 3.11 and a virtual environment:
+    ```zsh
+    $ python3 --version
+    Python 3.11.7
 
-$ source venv/bin/activate
-(venv) sdr:vending-machine-kata-py$ pip install pytest
+    $ source venv/bin/activate
+    (venv) $ 
+    ```
 
-... installation info
+2. Install `pytest` version >= 8
+    ```zsh
+    (venv) $ pip install pytest
 
-(venv) $ pytest --version
-pytest 8.0.2
-```
+    ... installation info
+
+    (venv) $ pytest --version
+    pytest 8.0.2
+    ```
+
+3. Running `pytest` like this:
+    ```zsh
+    (venv) $ pytest getting_started/test_vending_machine.py
+    ```
+
+4. Returns
+    ```zsh
+    ====================== test session starts ======================
+    platform darwin -- Python 3.11.7, pytest-8.0.2, pluggy-1.4.0
+    rootdir: /Users/sdr/ ... /vending-machine-kata-py
+    collected 1 item                                                                                                
+
+    getting_started/test_vending_machine.py .                  [100%]
+
+    ======================= 1 passed in 0.01s =======================
+    ```
 
 #### Need more info?
 
