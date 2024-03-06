@@ -6,8 +6,9 @@ class Coin(Enum):
     DIME = 'dime'
     QUARTER = 'quarter'
 
-# Message when no coins
-INSERT_COIN = 'INSERT COIN'
+# Messages
+INSERT_COIN = 'INSERT COIN' # when no coins inserted
+THANK_YOU = 'THANK YOU'     # after product dispensed
 
 
 class VendingMachine:
@@ -23,7 +24,7 @@ class VendingMachine:
     def get_display(self):
         current_display = self._display
 
-        if self._display == 'THANK YOU':
+        if self._display == THANK_YOU:
             self._display = '$0.00'
 
         return current_display
@@ -69,6 +70,6 @@ class VendingMachine:
 
         if self.total_amount >= 1.00:
             dispense['cola'] = 1
-            self.display = 'THANK YOU'
+            self.display = THANK_YOU
 
         return dispense

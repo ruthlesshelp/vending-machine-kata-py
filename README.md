@@ -149,3 +149,7 @@ when payment 4 quarters
 and cola is pressed
 and display shows THANK YOU
 expect display now shows $0.00
+
+### Refactoring
+
+- Move the THANK YOU message to a constant
