@@ -135,3 +135,9 @@ expect 1 cola is dispensed
 Test `display` property
 when payment 4 quarters and cola is pressed
 expect display shows THANK YOU
+
+### Test 21
+
+Test `select_cola` method
+when payment 3 quarters (not enough money)
+expect cola is not dispensed
