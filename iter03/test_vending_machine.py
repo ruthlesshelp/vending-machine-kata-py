@@ -332,3 +332,17 @@ def test_select_chips_when_payment_2q_select_chips_expect_1_chips_dispensed():
 
     # Assert
     assert actual == expected
+
+def test_display_when_payment_2q_and_chips_expect_display_shows_thank_you():
+    # Arrange
+    expected = 'THANK YOU'
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins(Coin.QUARTER, 2)
+    dispensed = class_under_test.select_chips()
+    assert dispensed == { 'chips': 1 }
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == expected

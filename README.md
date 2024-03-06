@@ -216,3 +216,9 @@ _Let's implement the chips for $0.50_
 Test `select_chips` method
 when payment 2 quarters
 expect 1 chips is dispensed
+
+### Test 28
+
+Test `display` property
+when payment 2 quarters and chips is pressed
+expect display shows THANK YOU

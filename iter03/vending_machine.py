@@ -90,4 +90,6 @@ class VendingMachine:
         return dispense
 
     def select_chips(self):
+        self.display = THANK_YOU
+
         return { 'chips': 1 }
