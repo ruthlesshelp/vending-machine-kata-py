@@ -18,10 +18,35 @@ If you want to practice this Kata, I recommend that you begin with your own fold
 
 #### Just need the TL;DR?
 
+Set up in your own working folder with your favorite editor.
+
+The TL;DR steps for `venv` and `pip` should work on macOS (and probably Linux)
+
+They _should_ work on many versions of Python, including Python 3.7+
+
+* What About Windows?
+  - The `source venv/bin/activate` line won’t work for Windows.
+  - For cmd.exe, use `venv\Scripts\activate.bat` instead
+    ```bash
+    C:\> python -m venv venv
+    C:\> venv\Scripts\activate.bat
+    C:\> pip install pytest
+    ```
+  - For PowerShell, use `venv\Scripts\Activate.ps1` instead:
+    ```bash
+    PS C:\> python -m venv venv
+    PS C:\> venv\Scripts\Activate.ps1
+    PS C:\> pip install pytest
+    ```
+
+#### TL;DR Steps
+
 1. Use Python >= 3.11 and a virtual environment:
     ```zsh
     $ python3 --version
     Python 3.11.7
+
+    $ python3 -m venv venv
 
     $ source venv/bin/activate
     (venv) $ 
@@ -56,7 +81,8 @@ If you want to practice this Kata, I recommend that you begin with your own fold
 
 #### Need more info?
 
-See this [Install pytest](https://docs.pytest.org/en/latest/getting-started.html) page.
+* See this [Install pytest](https://docs.pytest.org/en/latest/getting-started.html) page.
+* See this [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial) page.
 
 # Getting Started
 
