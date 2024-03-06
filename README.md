@@ -10,6 +10,10 @@ In this exercise, you're asked to create the core functionality of a vending mac
 
 The primary purpose of this kata is to offer a moderately complex challenge that serves as an opportunity to hone Test-Driven Development (TDD) skills. A considerable part of the challenge will involve deciding which tests to write and, crucially, determining the order in which they should be tackled.
 
+**Important explanation:** all the files in this repo are the _result_ of the coding I practiced here.
+
+If you want to practice this Kata, I recommend that you begin with your own folder or repo, such as `my_vending_machine_kata`.
+
 ### Setting Up
 
 #### Just need the TL;DR?
@@ -42,7 +46,7 @@ The primary purpose of this kata is to offer a moderately complex challenge that
     ```zsh
     ====================== test session starts ======================
     platform darwin -- Python 3.11.7, pytest-8.0.2, pluggy-1.4.0
-    rootdir: /Users/sdr/ ... /vending-machine-kata-py
+    rootdir: /Users/ ... /vending-machine-kata-py
     collected 1 item                                                                                                
 
     getting_started/test_vending_machine.py .                  [100%]
@@ -54,7 +58,11 @@ The primary purpose of this kata is to offer a moderately complex challenge that
 
 See this [Install pytest](https://docs.pytest.org/en/latest/getting-started.html) page.
 
-### The Starting Point
+# Getting Started
+
+Here are the steps that I undertook to get started.
+
+Created the `getting_started` folder.
 
 Under the `getting_started` folder:
 1. Create the `test_vending_machine.py` file
@@ -75,6 +83,8 @@ def test_getting_started():
 
 3. See the test fail.
 
+I ran `pytest` from the repo root directory and passed the subfolder path and filename. For the iterations, make/change directory to the working folder to limit the `pytest` discovery to that folder.
+
 Running:
 ```zsh
 (venv) $ pytest getting_started/test_vending_machine.py
@@ -84,19 +94,19 @@ Returns:
 ```zsh
 =================================== test session starts ====================================
 platform darwin -- Python 3.11.7, pytest-8.0.2, pluggy-1.4.0
-rootdir: /Users/sdr/training/ruthlesshelp/vending-machine-kata-py
+rootdir: /Users/ ... /vending-machine-kata-py
 collected 0 items / 1 error                                                                
 
 ========================================== ERRORS ==========================================
 _________________ ERROR collecting getting_started/test_vending_machine.py _________________
-ImportError while importing test module '/Users/sdr/training/ruthlesshelp/vending-machine-kata-py/getting_started/test_vending_machine.py'.
+ImportError while importing test module '/Users/ ... /vending-machine-kata-py/getting_started/test_vending_machine.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
 /opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
     return _bootstrap._gcd_import(name[level:], package, level)
 getting_started/test_vending_machine.py:1: in <module>
     from vending_machine import VendingMachine
-E   ImportError: cannot import name 'VendingMachine' from 'vending_machine' (/Users/sdr/training/ruthlesshelp/vending-machine-kata-py/getting_started/vending_machine.py)
+E   ImportError: cannot import name 'VendingMachine' from 'vending_machine' (/Users/ ... /vending-machine-kata-py/getting_started/vending_machine.py)
 ================================= short test summary info ==================================
 ERROR getting_started/test_vending_machine.py
 !!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -114,7 +124,7 @@ Returns:
 ```zsh
 ========================================= test session starts ==========================================
 platform darwin -- Python 3.11.7, pytest-8.0.2, pluggy-1.4.0
-rootdir: /Users/sdr/training/ruthlesshelp/vending-machine-kata-py
+rootdir: /Users/ ... /vending-machine-kata-py
 collected 1 item                                                                                       
 
 getting_started/test_vending_machine.py .                                                        [100%]
@@ -124,8 +134,12 @@ getting_started/test_vending_machine.py .                                       
 
 # Iterations
 
+## Prior Iterations
+
 1. [Return Coins](iter01/README.md)
 1. [Accept Coins](iter02/README.md)
+
+Below is the iteration I'm currently working on ...
 
 ## Iter03: Select Product
 
