@@ -81,5 +81,7 @@ class VendingMachine:
             dispense['cola'] = 1
             self._total_amount -= 1.00
             self.display = THANK_YOU
+        else:
+            self.display = 'PRICE $1.00'
 
         return dispense
