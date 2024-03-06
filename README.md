@@ -181,3 +181,7 @@ and cola is pressed
 and display shows THANK YOU
 and display shows INSERT COIN
 expect current amount now shows $0.00
+
+### Refactoring
+
+- Use the `current_amount` to set the `display`, where appropriate

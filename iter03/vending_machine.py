@@ -72,7 +72,7 @@ class VendingMachine:
             self.rejects += coins
 
         self._total_amount += amount
-        self.display = f'${self._total_amount:.2f}'
+        self.display = self.current_amount
 
     def select_cola(self):
         dispense = {}
