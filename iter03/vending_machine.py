@@ -6,12 +6,19 @@ class Coin(Enum):
     DIME = 'dime'
     QUARTER = 'quarter'
 
+class Product(Enum):
+    COLA = 'cola'
+    CHIPS = 'chips'
+
 # Messages
 INSERT_COIN = 'INSERT COIN' # when no coins inserted
 THANK_YOU = 'THANK YOU'     # after product dispensed
 
 
 class VendingMachine:
+    # prices for each product
+    _prices = { Product.COLA: 1.00, Product.CHIPS: 0.50}
+
     def __init__(self):
         self._total_amount = 0
         self.nickels = 0
@@ -79,22 +86,24 @@ class VendingMachine:
 
     def select_cola(self):
         dispense = {}
+        price = self._prices[Product.COLA]
 
-        if self._total_amount >= 1.00:
-            dispense['cola'] = 1
-            self._total_amount -= 1.00
+        if self._total_amount >= price:
+            dispense[Product.COLA.value] = 1
+            self._total_amount -= price
             self.display = THANK_YOU
         else:
-            self.display = 'PRICE $1.00'
+            self.display = f'PRICE ${price:.2f}'
 
         return dispense
 
     def select_chips(self):
         dispense = {}
+        price = self._prices[Product.CHIPS]
 
-        if self._total_amount >= 0.50:
-            dispense['chips'] = 1
-            self._total_amount -= 0.50
+        if self._total_amount >= price:
+            dispense[Product.CHIPS.value] = 1
+            self._total_amount -= price
             self.display = THANK_YOU
 
         return dispense

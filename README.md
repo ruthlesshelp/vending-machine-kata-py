@@ -243,3 +243,9 @@ when payment 5 dimes
 and chips is pressed
 and display shows THANK YOU
 expect current amount now shows $0.00
+
+### Refactoring
+
+- introduced the Product enum with Cola and Chips
+- introduced a dictionary of prices for each product
+- changed code to use new elements
