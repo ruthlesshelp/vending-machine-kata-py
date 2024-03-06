@@ -13,7 +13,7 @@ THANK_YOU = 'THANK YOU'     # after product dispensed
 
 class VendingMachine:
     def __init__(self):
-        self.total_amount = 0
+        self._total_amount = 0
         self.nickels = 0
         self.dimes = 0
         self.quarters = 0
@@ -34,6 +34,15 @@ class VendingMachine:
 
     display = property(get_display, set_display)
 
+    def get_current_amount(self):
+        return f'${self._total_amount:.2f}'
+
+    def set_current_amount(self):
+        pass
+
+    current_amount = property(get_current_amount, set_current_amount)
+
+    # methods
     def return_coins(self):
         self.display = INSERT_COIN
         return_slot = {}
@@ -62,14 +71,15 @@ class VendingMachine:
         else:
             self.rejects += coins
 
-        self.total_amount += amount
-        self.display = f'${self.total_amount:.2f}'
+        self._total_amount += amount
+        self.display = f'${self._total_amount:.2f}'
 
     def select_cola(self):
         dispense = {}
 
-        if self.total_amount >= 1.00:
+        if self._total_amount >= 1.00:
             dispense['cola'] = 1
+            self._total_amount -= 1.00
             self.display = THANK_YOU
 
         return dispense

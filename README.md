@@ -172,3 +172,12 @@ when payment 4 quarters
 and cola is pressed
 and display shows THANK YOU
 expect display now shows INSERT COIN
+
+### Test 23
+
+Test `current_amount` property
+when payment 4 quarters 
+and cola is pressed
+and display shows THANK YOU
+and display shows INSERT COIN
+expect current amount now shows $0.00
