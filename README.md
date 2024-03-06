@@ -153,3 +153,22 @@ expect display now shows $0.00
 ### Refactoring
 
 - Move the THANK YOU message to a constant
+
+### Defect Found!
+
+Need to resolve incorrect behaviors:
+- _If the display is checked again, it will display INSERT COIN_
+- _and the current amount will be set to $0.00._
+
+Observations:
+* There are two relevant properties: `display` and `current_amount`
+* It seems we didn't implement `current_amount`
+* Also, Test 22 (and perhaps others) is wrong
+
+### Test 22 (fix)
+
+Test `display` property
+when payment 4 quarters 
+and cola is pressed
+and display shows THANK YOU
+expect display now shows INSERT COIN

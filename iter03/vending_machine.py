@@ -25,7 +25,7 @@ class VendingMachine:
         current_display = self._display
 
         if self._display == THANK_YOU:
-            self._display = '$0.00'
+            self._display = INSERT_COIN
 
         return current_display
     
