@@ -129,3 +129,9 @@ either INSERT COIN or the current amount as appropriate.
 Test `select_cola` method
 when payment 4 quarters
 expect 1 cola is dispensed
+
+### Test 20
+
+Test `display` property
+when payment 4 quarters and cola is pressed
+expect display shows THANK YOU

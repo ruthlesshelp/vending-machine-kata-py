@@ -51,4 +51,6 @@ class VendingMachine:
         self.display = f'${self.total_amount:.2f}'
 
     def select_cola(self):
+        self.display = 'THANK YOU'
+
         return { 'cola': 1 }
