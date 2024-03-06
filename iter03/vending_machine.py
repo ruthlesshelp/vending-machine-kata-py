@@ -27,6 +27,9 @@ class VendingMachine:
         if self._display == THANK_YOU:
             self._display = INSERT_COIN
 
+        if self._display == 'PRICE $1.00':
+            self._display = INSERT_COIN
+
         return current_display
     
     def set_display(self, display):
