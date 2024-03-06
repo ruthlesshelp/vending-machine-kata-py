@@ -200,3 +200,11 @@ when payment 3 quarters (not enough money)
 and cola is pressed
 and display shows PRICE $1.00
 expect subsequent check of the display shows INSERT COIN
+
+### Test 26
+
+Test `current_amount` property
+when payment 3 quarters (not enough money)
+and cola is pressed
+and display shows PRICE $1.00
+expect current amount is $0.75

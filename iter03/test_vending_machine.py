@@ -305,3 +305,18 @@ def test_display_when_payment_3q_select_cola_and_check_display_expect_next_displ
 
     # Assert
     assert actual == expected
+
+def test_current_amount_when_payment_3q_select_cola_and_check_display_expect_current_amount_shows_0_pt_75():
+    # Arrange
+    expected = '$0.75'
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins(Coin.QUARTER, 3)
+    class_under_test.select_cola()
+    current_display = class_under_test.display
+    assert current_display == 'PRICE $1.00'
+
+    # Act
+    actual = class_under_test.current_amount
+
+    # Assert
+    assert actual == expected
