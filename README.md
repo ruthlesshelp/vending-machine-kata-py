@@ -235,3 +235,11 @@ Test `display` property
 when payment 3 nickels (not enough money)
 and chips is pressed
 expect display doesn't show THANK YOU
+
+### Test 31
+
+Test `display` property
+when payment 5 dimes 
+and chips is pressed
+and display shows THANK YOU
+expect current amount now shows $0.00

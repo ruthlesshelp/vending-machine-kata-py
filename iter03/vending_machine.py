@@ -94,6 +94,7 @@ class VendingMachine:
 
         if self._total_amount >= 0.50:
             dispense['chips'] = 1
+            self._total_amount -= 0.50
             self.display = THANK_YOU
 
         return dispense

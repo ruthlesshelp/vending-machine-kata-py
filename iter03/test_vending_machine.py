@@ -370,3 +370,16 @@ def test_display_when_payment_3n_and_select_chips_expect_display_not_thank_you()
 
     # Assert
     assert actual != 'THANK YOU'
+
+def test_display_when_payment_5d_and_select_chips_expect_current_amount_is_0_pt_00():
+    # Arrange
+    expected = '$0.00'
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins(Coin.DIME, 5)
+    class_under_test.select_chips()
+
+    # Act
+    actual = class_under_test.current_amount
+
+    # Assert
+    assert actual == expected
