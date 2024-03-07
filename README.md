@@ -215,3 +215,12 @@ expect display shows out of stock
 - Change incorrect product name from "soda" to "cola"
 - Use the Product enum values instead of the strings
 - Remove the public accessors for the private stock dictionary
+
+### Test 46
+
+Test `display` property
+when candy are out of stock
+and insert 3 quarters
+and select candy
+and display shows out of stock
+expect display shows $0.75

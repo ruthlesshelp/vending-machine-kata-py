@@ -32,16 +32,10 @@ class VendingMachine:
 
     # properties
     def get_display(self):
-        if self._stock['cola'] == 0:
-            return 'OUT OF STOCK'
-
-        if self._stock['chips'] == 0:
-            return 'OUT OF STOCK'
-
-        if self._stock['candy'] == 0:
-            return 'OUT OF STOCK'
-
         current_display = self._display
+
+        if self._display == 'OUT OF STOCK':
+            self._display = f'${self._total_amount:.2f}'
 
         if self._display == THANK_YOU:
             self._display = INSERT_COIN
@@ -98,6 +92,11 @@ class VendingMachine:
 
     def select_product(self, product: Product) -> None:
         dispense = {}
+
+        if self._stock[product.value] == 0:
+            self.display = 'OUT OF STOCK'
+            return
+
         price = self._prices[product]
 
         if self._total_amount >= price:
