@@ -224,3 +224,7 @@ and insert 3 quarters
 and select candy
 and display shows out of stock
 expect display shows $0.75
+
+### Fix defect
+
+- The display is supposed to show SOLD OUT, not out of stock

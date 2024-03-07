@@ -34,7 +34,7 @@ class VendingMachine:
     def get_display(self):
         current_display = self._display
 
-        if self._display == 'OUT OF STOCK':
+        if self._display == 'SOLD OUT':
             self._display = f'${self._total_amount:.2f}'
 
         if self._display == THANK_YOU:
@@ -94,7 +94,7 @@ class VendingMachine:
         dispense = {}
 
         if self._stock[product.value] == 0:
-            self.display = 'OUT OF STOCK'
+            self.display = 'SOLD OUT'
             return
 
         price = self._prices[product]
