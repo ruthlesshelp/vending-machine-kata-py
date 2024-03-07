@@ -500,3 +500,17 @@ def test_coin_return_when_payment_3q_1d_select_candy_expect_coin_return_has_2d(c
 
     # Assert
     assert actual == expected
+
+def test_coin_return_when_payment_7919q_7829d_7723n_select_candy_expect_coin_return_has_12592q_1d_1n(class_under_test):
+    # Arrange
+    expected = { 'quarter': 12592, 'dime': 1, 'nickel': 1 } # used Excel to determine this expected return
+    class_under_test.insert_coins(Coin.QUARTER, 7919)
+    class_under_test.insert_coins(Coin.DIME, 7829)
+    class_under_test.insert_coins(Coin.NICKEL, 7723)
+    class_under_test.select_product(Product.CANDY)
+    
+    # Act
+    actual = class_under_test.coin_return
+
+    # Assert
+    assert actual == expected

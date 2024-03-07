@@ -207,3 +207,16 @@ Test `coin_return` property
 when payment 3 quarters and 1 dime
 and candy is pressed
 expect coin return has 2 dimes
+
+## Test 42
+
+_Let's try some relatively large numbers of coins as input and use Excel to get the `expected` return_
+
+**NOTE:** this probably isn't the desired behavior, but we are _checking that the code works as it's intend to work by the developer_.
+
+Test `coin_return` property
+and insert 7919 quarters
+and insert 7829 dimes
+and insert 7723 nickels
+and candy is pressed
+expect coin return has 12592 quarters, 1 dime, 1 nickel
