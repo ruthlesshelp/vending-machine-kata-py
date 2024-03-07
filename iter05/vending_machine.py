@@ -31,6 +31,9 @@ class VendingMachine:
 
     # properties
     def get_display(self):
+        if self.chips_stock == 0:
+            return 'OUT OF STOCK'
+
         current_display = self._display
 
         if self._display == THANK_YOU:
@@ -130,4 +133,5 @@ class VendingMachine:
         self.rejects = 0
         self.coin_return = {}
         self.output_box = {}
+        self.chips_stock = 157
         self._display = INSERT_COIN

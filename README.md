@@ -180,3 +180,11 @@ _so that I can select another item_
 When the item selected by the customer is out of stock, the machine displays SOLD OUT.
 
 If the display is checked again, it will display the amount of money remaining in the machine or INSERT COIN if there is no money in the machine.
+
+### Test 43
+
+Test `display` property
+when chips are out of stock
+and insert 3 quarters
+and select chips
+expect display shows out of stock
