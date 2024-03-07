@@ -94,6 +94,8 @@ class VendingMachine:
         else:
             self.display = f'PRICE ${price:.2f}'
 
+        self.coin_return = { 'quarter': 5 }
+
         return dispense
 
     # private testability enhancement
@@ -103,4 +105,5 @@ class VendingMachine:
         self.dimes = 0
         self.quarters = 0
         self.rejects = 0
+        self.coin_return = {}
         self._display = INSERT_COIN
