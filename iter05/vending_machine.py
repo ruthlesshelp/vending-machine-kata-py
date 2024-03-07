@@ -34,6 +34,9 @@ class VendingMachine:
         if self.chips_stock == 0:
             return 'OUT OF STOCK'
 
+        if self.soda_stock == 0:
+            return 'OUT OF STOCK'
+
         current_display = self._display
 
         if self._display == THANK_YOU:
@@ -134,4 +137,5 @@ class VendingMachine:
         self.coin_return = {}
         self.output_box = {}
         self.chips_stock = 157
+        self.soda_stock = 103
         self._display = INSERT_COIN

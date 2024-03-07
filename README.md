@@ -188,3 +188,11 @@ when chips are out of stock
 and insert 3 quarters
 and select chips
 expect display shows out of stock
+
+### Test 44
+
+Test `display` property
+when soda are out of stock
+and insert 5 quarters
+and select soda
+expect display shows out of stock
