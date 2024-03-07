@@ -354,3 +354,12 @@ Test `display` property
 when payment 2 quarters (not enough money)
 and candy is pressed
 expect display shows PRICE $0.65
+
+### Test 37
+
+_Add missing Chips test_
+
+Test `display` property
+when payment 3 dimes (not enough money)
+and chips is pressed
+expect display shows PRICE $0.50

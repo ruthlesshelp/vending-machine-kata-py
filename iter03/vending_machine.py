@@ -106,6 +106,8 @@ class VendingMachine:
             dispense[Product.CHIPS.value] = 1
             self._total_amount -= price
             self.display = THANK_YOU
+        else:
+            self.display = f'PRICE ${price:.2f}'
 
         return dispense
 
