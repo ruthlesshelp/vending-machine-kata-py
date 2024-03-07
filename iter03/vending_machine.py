@@ -107,3 +107,6 @@ class VendingMachine:
             self.display = THANK_YOU
 
         return dispense
+
+    def select_candy(self):
+        return { 'candy': 1 }

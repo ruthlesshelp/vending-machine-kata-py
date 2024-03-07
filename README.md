@@ -312,3 +312,11 @@ expect current amount now shows $0.00
 - introduced the Product enum with Cola and Chips
 - introduced a dictionary of prices for each product
 - changed code to use new elements
+
+### Test 32
+
+_It's time for some Candy!_
+
+Test `select_candy` method
+when payment 2 quarters, 1 dime, and 1 nickel
+expect 1 candy is dispensed
