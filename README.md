@@ -187,7 +187,7 @@ Test `display` property
 when chips are out of stock
 and insert 3 quarters
 and select chips
-expect display shows out of stock
+expect display shows sold out
 
 ### Test 44
 
@@ -195,7 +195,7 @@ Test `display` property
 when soda are out of stock
 and insert 5 quarters
 and select soda
-expect display shows out of stock
+expect display shows sold out
 
 ### Test 45
 
@@ -203,7 +203,7 @@ Test `display` property
 when candy are out of stock
 and insert 3 quarters
 and select candy
-expect display shows out of stock
+expect display shows sold out
 
 ### Refactoring
 
@@ -222,7 +222,7 @@ Test `display` property
 when candy are out of stock
 and insert 3 quarters
 and select candy
-and display shows out of stock
+and display shows sold out
 expect display shows $0.75
 
 ### Fix defect
