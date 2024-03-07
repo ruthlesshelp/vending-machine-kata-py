@@ -226,3 +226,9 @@ expect coin return has 12592 quarters, 1 dime, 1 nickel
 - Change the behavior of the `return_coins` method
 - Have it put the coins in the `coin_return` property and return None
 - Change the tests to look in the `coin_return` for the returned change
+
+## Refactoring
+
+- Change the behavior of the `select_product` method
+- Have it put the dispensed product in the `output_box` property and return None
+- Change the tests to look in the `output_box` for the dispensed product

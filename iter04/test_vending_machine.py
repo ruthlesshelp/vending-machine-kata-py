@@ -217,9 +217,10 @@ def test_select_cola_with_payment_4_quarters_expect_1_cola_is_dispensed(class_un
     # Arrange
     expected = { 'cola': 1 }
     class_under_test.insert_coins(Coin.QUARTER, 4)
+    class_under_test.select_product(Product.COLA)
 
     # Act
-    actual = class_under_test.select_product(Product.COLA)
+    actual = class_under_test.output_box
 
     # Assert
     assert actual == expected
@@ -240,9 +241,10 @@ def test_select_cola_with_payment_3_quarters_expect_nothing_is_dispensed(class_u
     # Arrange
     expected = { }
     class_under_test.insert_coins(Coin.QUARTER, 3)
+    class_under_test.select_product(Product.COLA)
 
     # Act
-    actual = class_under_test.select_product(Product.COLA)
+    actual = class_under_test.output_box
 
     # Assert
     assert actual == expected
@@ -322,9 +324,10 @@ def test_select_chips_when_payment_2q_select_chips_expect_1_chips_dispensed(clas
     # Arrange
     expected = { 'chips': 1 }
     class_under_test.insert_coins(Coin.QUARTER, 2)
+    class_under_test.select_product(Product.CHIPS)
     
     # Act
-    actual = class_under_test.select_product(Product.CHIPS)
+    actual = class_under_test.output_box
 
     # Assert
     assert actual == expected
@@ -333,8 +336,9 @@ def test_display_when_payment_2q_and_chips_expect_display_shows_thank_you(class_
     # Arrange
     expected = 'THANK YOU'
     class_under_test.insert_coins(Coin.QUARTER, 2)
-    dispensed = class_under_test.select_product(Product.CHIPS)
-    assert dispensed == { 'chips': 1 }
+    class_under_test.select_product(Product.CHIPS)
+    output = class_under_test.output_box
+    assert output == { 'chips': 1 }
 
     # Act
     actual = class_under_test.display
@@ -346,9 +350,10 @@ def test_select_chips_when_payment_3n_and_select_chips_expect_no_chips_dispensed
     # Arrange
     expected = {}
     class_under_test.insert_coins(Coin.NICKEL, 3)
+    class_under_test.select_product(Product.CHIPS)
 
     # Act
-    actual = class_under_test.select_product(Product.CHIPS)
+    actual = class_under_test.output_box
 
     # Assert
     assert actual == expected
@@ -382,9 +387,10 @@ def test_display_when_payment_2q_1d_1n_and_select_candy_expect_1_candy_dispensed
     class_under_test.insert_coins(Coin.QUARTER, 2)
     class_under_test.insert_coins(Coin.DIME, 1)
     class_under_test.insert_coins(Coin.NICKEL, 1)
+    class_under_test.select_product(Product.CANDY)
     
     # Act
-    actual = class_under_test.select_product(Product.CANDY)
+    actual = class_under_test.output_box
 
     # Assert
     assert actual == expected
@@ -408,9 +414,10 @@ def test_select_candy_when_payment_1q_1d_expect_no_candy_dispensed(class_under_t
     expected = {}
     class_under_test.insert_coins(Coin.QUARTER, 1)
     class_under_test.insert_coins(Coin.DIME, 1)
+    class_under_test.select_product(Product.CANDY)
 
     # Act
-    actual = class_under_test.select_product(Product.CANDY)
+    actual = class_under_test.output_box
 
     # Assert
     assert actual == expected
@@ -421,8 +428,9 @@ def test_current_amount_when_payment_2q_1d_1n_and_select_candy_and_display_ty_ex
     class_under_test.insert_coins(Coin.QUARTER, 2)
     class_under_test.insert_coins(Coin.DIME, 1)
     class_under_test.insert_coins(Coin.NICKEL, 1)
-    dispensed = class_under_test.select_product(Product.CANDY)
-    assert dispensed == { 'candy': 1 }
+    class_under_test.select_product(Product.CANDY)
+    output = class_under_test.output_box
+    assert output == { 'candy': 1 }
     message = class_under_test.display
     assert message == 'THANK YOU'
 

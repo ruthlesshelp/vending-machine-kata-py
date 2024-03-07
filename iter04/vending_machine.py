@@ -85,7 +85,7 @@ class VendingMachine:
         self._total_amount += amount
         self.display = self.current_amount
 
-    def select_product(self, product: Product):
+    def select_product(self, product: Product) -> None:
         dispense = {}
         price = self._prices[product]
 
@@ -97,7 +97,7 @@ class VendingMachine:
         else:
             self.display = f'PRICE ${price:.2f}'
 
-        return dispense
+        self.output_box = dispense
 
     def _make_change(self):
         coin_return = {}
@@ -128,4 +128,5 @@ class VendingMachine:
         self.quarters = 0
         self.rejects = 0
         self.coin_return = {}
+        self.output_box = {}
         self._display = INSERT_COIN
