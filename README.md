@@ -166,6 +166,7 @@ getting_started/test_vending_machine.py .                                       
 1. [Accept Coins](iter02/README.md)
 1. [Select Product](iter03/README.md)
 1. [Make Change](iter04/README.md)
+1. [Sold Out](iter05/README.md)
 
 Below is the iteration I'm currently working on ...
 
@@ -242,3 +243,11 @@ expect display now shows insert coin
 - Combined the display info for money and no money in the machine
 - Remove the `current_amount` property, it was never needed
 - Moved the SOLD OUT literal string into a constant
+
+## Iter06: Exact Change Only
+
+_As a customer,_
+_I want to be told when exact change is required,_
+_so that I can determine if I can buy something with the money I have before inserting it_
+
+When the machine is not able to make change with the money in the machine for any of the items that it sells, it will display EXACT CHANGE ONLY instead of INSERT COIN.
