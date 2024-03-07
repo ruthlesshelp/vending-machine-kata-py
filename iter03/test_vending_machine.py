@@ -260,7 +260,7 @@ def test_display_when_4q_and_select_cola_and_check_display_expect_next_display_i
     # Assert
     assert actual == expected
 
-def test_display_when_4q_and_select_cola_and_check_display_twice_expect_current_amount_0_pt_00():
+def test_current_amount_when_4q_and_select_cola_and_check_display_twice_expect_current_amount_0_pt_00():
     # Arrange
     expected = '$0.00'
     class_under_test = VendingMachine()
@@ -371,7 +371,7 @@ def test_display_when_payment_3n_and_select_chips_expect_display_not_thank_you()
     # Assert
     assert actual != 'THANK YOU'
 
-def test_display_when_payment_5d_and_select_chips_expect_current_amount_is_0_pt_00():
+def test_current_amount_when_payment_5d_and_select_chips_expect_current_amount_is_0_pt_00():
     # Arrange
     expected = '$0.00'
     class_under_test = VendingMachine()
@@ -422,6 +422,24 @@ def test_select_candy_when_payment_1q_1d_expect_no_candy_dispensed():
 
     # Act
     actual = class_under_test.select_candy()
+
+    # Assert
+    assert actual == expected
+
+def test_current_amount_when_payment_2q_1d_1n_and_select_candy_and_display_ty_expect_display_0_pt_00():
+    # Arrange
+    expected = '$0.00'
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins(Coin.QUARTER, 2)
+    class_under_test.insert_coins(Coin.DIME, 1)
+    class_under_test.insert_coins(Coin.NICKEL, 1)
+    dispensed = class_under_test.select_candy()
+    assert dispensed == { 'candy': 1 }
+    message = class_under_test.display
+    assert message == 'THANK YOU'
+
+    # Act
+    actual = class_under_test.current_amount
 
     # Assert
     assert actual == expected

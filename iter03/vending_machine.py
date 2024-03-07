@@ -109,9 +109,11 @@ class VendingMachine:
         return dispense
 
     def select_candy(self):
-        if self._total_amount < 0.65:
-            return {}
+        dispense = {}
 
-        self.display = THANK_YOU
+        if self._total_amount >= 0.65:
+            dispense['candy'] = 1
+            self._total_amount -= 0.65
+            self.display = THANK_YOU
 
-        return { 'candy': 1 }
+        return dispense

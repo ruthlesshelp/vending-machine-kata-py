@@ -207,11 +207,11 @@ expect cola is not dispensed
 
 ### Test 22
 
-Test `display` property
+Test `current_amount` property
 when payment 4 quarters 
 and cola is pressed
 and display shows THANK YOU
-expect display now shows $0.00
+expect current amount now shows $0.00
 
 ### Refactoring
 
@@ -301,7 +301,7 @@ expect display doesn't show THANK YOU
 
 ### Test 31
 
-Test `display` property
+Test `current_amount` property
 when payment 5 dimes 
 and chips is pressed
 and display shows THANK YOU
@@ -333,3 +333,11 @@ expect display shows THANK YOU
 Test `select_candy` method
 when payment 1 quarter and 1 dime (not enough money)
 expect candy is not dispensed
+
+### Test 35
+
+Test `current_amount` property
+when payment 2 quarters, 1 dime, and 1 nickel
+and candy is pressed
+and display shows THANK YOU
+expect current amount now shows $0.00
