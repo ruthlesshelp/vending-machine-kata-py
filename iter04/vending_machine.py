@@ -4,8 +4,9 @@ import math
 
 from enum import Enum
 
-class Coin(Enum):
-    PENNY = 'penny'  # Not acceptable
+class CoinName(Enum):
+    REJECT = 'reject' # Not acceptable
+    PENNY = 'penny'   # Not acceptable
     NICKEL = 'nickel'
     DIME = 'dime'
     QUARTER = 'quarter'
@@ -58,25 +59,25 @@ class VendingMachine:
         self.display = INSERT_COIN
         coin_return = {}
         if self.nickels > 0:
-            coin_return['nickel'] = self.nickels
+            coin_return[CoinName.NICKEL.value] = self.nickels
         if self.dimes > 0:
-            coin_return['dime'] = self.dimes
+            coin_return[CoinName.DIME.value] = self.dimes
         if self.quarters > 0:
-            coin_return['quarter'] = self.quarters
+            coin_return[CoinName.QUARTER.value] = self.quarters
         if self.rejects > 0:
-            coin_return['reject'] = self.rejects
+            coin_return[CoinName.REJECT.value] = self.rejects
 
         self.coin_return = coin_return
 
-    def insert_coins(self, coin_type: Coin, coins: int):
+    def insert_coins(self, coin_type: CoinName, coins: int):
         amount = 0
-        if coin_type == Coin.QUARTER:
+        if coin_type == CoinName.QUARTER:
             self.quarters += coins
             amount = coins * 0.25
-        elif coin_type == Coin.NICKEL:
+        elif coin_type == CoinName.NICKEL:
             self.nickels += coins
             amount = coins * 0.05
-        elif coin_type == Coin.DIME:
+        elif coin_type == CoinName.DIME:
             self.dimes += coins
             amount = coins * 0.10
         else:
@@ -105,17 +106,17 @@ class VendingMachine:
 
         quarters = int(total_cents / 25)
         if quarters > 0:
-            coin_return['quarter'] = quarters
+            coin_return[CoinName.QUARTER.value] = quarters
         total_cents -= quarters * 25
 
         dimes = int(total_cents / 10)
         if dimes > 0:
-            coin_return['dime'] = dimes
+            coin_return[CoinName.DIME.value] = dimes
         total_cents -= dimes * 10
 
         nickels = int(total_cents / 5)
         if nickels > 0:
-            coin_return['nickel'] = nickels
+            coin_return[CoinName.NICKEL.value] = nickels
         total_cents -= nickels * 5
 
         return coin_return
