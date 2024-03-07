@@ -467,3 +467,14 @@ def test_when_XYZ_expect_ABC(class_under_test):
 Running all the tests ... results in 37 passed in 2.04s! An average of 0.055 seconds per test.
 
 One important advantage of using fixtures, you can reduce the amount of redundant Arrange code that's found across tests.
+
+## Iter04: Make Change
+
+Change working directory to `iter04`
+
+_As a vendor_  
+_I want customers to receive correct change,_  
+_so that they will use the vending machine again_  
+
+When a product is selected that costs less than the amount of money in the machine, then the remaining amount is placed
+in the coin return.
