@@ -397,3 +397,18 @@ def test_display_when_payment_2q_1d_1n_and_select_candy_expect_1_candy_dispensed
 
     # Assert
     assert actual == expected
+
+def test_display_when_payment_2q_1d_1n_and_select_candy_expect_display_shows_thank_you():
+    # Arrange
+    expected = 'THANK YOU'
+    class_under_test = VendingMachine()
+    class_under_test.insert_coins(Coin.QUARTER, 2)
+    class_under_test.insert_coins(Coin.DIME, 1)
+    class_under_test.insert_coins(Coin.NICKEL, 1)
+    class_under_test.select_candy()    
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == expected

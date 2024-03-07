@@ -320,3 +320,10 @@ _It's time for some Candy!_
 Test `select_candy` method
 when payment 2 quarters, 1 dime, and 1 nickel
 expect 1 candy is dispensed
+
+### Test 33
+
+Test `display` property
+when payment 2 quarters, 1 dime, and 1 nickel
+and candy is pressed
+expect display shows THANK YOU
