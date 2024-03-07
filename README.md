@@ -192,3 +192,11 @@ Test `coin_return` property
 when payment 9 dimes
 and chips is pressed
 expect coin return has 1 quarter, 1 dime, and 1 nickel
+
+## Test 40
+
+Test `coin_return` property
+when payment 1 quarter
+and chips is pressed
+display shows PRICE $0.50
+expect coin return is empty

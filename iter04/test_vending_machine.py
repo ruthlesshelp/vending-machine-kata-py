@@ -473,3 +473,22 @@ def test_coin_return_when_payment_9d_and_select_chips_expect_coin_return_has_1q_
 
     # Assert
     assert actual == expected
+
+# Test `coin_return` property
+# when payment 1 quarter
+# and chips is pressed
+# display shows PRICE $0.50
+# expect coin return is empty
+def test_coin_return_when_payment_1q_and_select_chips_and_display_shows_0_pt_50_expect_coin_return_is_empty(class_under_test):
+    # Arrange
+    expected = {}
+    class_under_test.insert_coins(Coin.QUARTER, 1)
+    class_under_test.select_product(Product.CHIPS)
+    display = class_under_test.display
+    assert display == 'PRICE $0.50'
+
+    # Act
+    actual = class_under_test.coin_return
+
+    # Assert
+    assert actual == expected

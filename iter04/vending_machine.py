@@ -90,11 +90,10 @@ class VendingMachine:
         if self._total_amount >= price:
             dispense[product.value] = 1
             self._total_amount -= price
+            self.coin_return = self._make_change()
             self.display = THANK_YOU
         else:
             self.display = f'PRICE ${price:.2f}'
-
-        self.coin_return = self._make_change()
 
         return dispense
 
