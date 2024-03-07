@@ -363,3 +363,8 @@ Test `display` property
 when payment 3 dimes (not enough money)
 and chips is pressed
 expect display shows PRICE $0.50
+
+### Refactoring
+
+- Combine `select_cola`, `select_chips`, and `select_candy` into one `select_product` method
+- Update tests to use this new method

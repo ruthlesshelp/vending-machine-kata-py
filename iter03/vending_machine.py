@@ -85,38 +85,12 @@ class VendingMachine:
         self._total_amount += amount
         self.display = self.current_amount
 
-    def select_cola(self):
+    def select_product(self, product: Product):
         dispense = {}
-        price = self._prices[Product.COLA]
+        price = self._prices[product]
 
         if self._total_amount >= price:
-            dispense[Product.COLA.value] = 1
-            self._total_amount -= price
-            self.display = THANK_YOU
-        else:
-            self.display = f'PRICE ${price:.2f}'
-
-        return dispense
-
-    def select_chips(self):
-        dispense = {}
-        price = self._prices[Product.CHIPS]
-
-        if self._total_amount >= price:
-            dispense[Product.CHIPS.value] = 1
-            self._total_amount -= price
-            self.display = THANK_YOU
-        else:
-            self.display = f'PRICE ${price:.2f}'
-
-        return dispense
-
-    def select_candy(self):
-        dispense = {}
-        price = self._prices[Product.CANDY]
-
-        if self._total_amount >= price:
-            dispense[Product.CANDY.value] = 1
+            dispense[product.value] = 1
             self._total_amount -= price
             self.display = THANK_YOU
         else:

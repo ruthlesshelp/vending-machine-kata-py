@@ -1,6 +1,6 @@
 # test_vending_machine.py
 
-from vending_machine import VendingMachine, Coin
+from vending_machine import VendingMachine, Coin, Product
 
 def test_return_coins_when_no_payment_expect_0_returned():
     # Arrange
@@ -215,7 +215,7 @@ def test_select_cola_with_payment_4_quarters_expect_1_cola_is_dispensed():
     class_under_test.insert_coins(Coin.QUARTER, 4)
 
     # Act
-    actual = class_under_test.select_cola()
+    actual = class_under_test.select_product(Product.COLA)
 
     # Assert
     assert actual == expected
@@ -225,7 +225,7 @@ def test_display_when_4q_and_select_cola_expect_display_thank_you():
     expected = 'THANK YOU'
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.QUARTER, 4)
-    class_under_test.select_cola()
+    class_under_test.select_product(Product.COLA)
 
     # Act
     actual = class_under_test.display
@@ -240,7 +240,7 @@ def test_select_cola_with_payment_3_quarters_expect_nothing_is_dispensed():
     class_under_test.insert_coins(Coin.QUARTER, 3)
 
     # Act
-    actual = class_under_test.select_cola()
+    actual = class_under_test.select_product(Product.COLA)
 
     # Assert
     assert actual == expected
@@ -250,7 +250,7 @@ def test_display_when_4q_and_select_cola_and_check_display_expect_next_display_i
     expected = 'INSERT COIN'
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.QUARTER, 4)
-    class_under_test.select_cola()
+    class_under_test.select_product(Product.COLA)
     current_display = class_under_test.display
     assert current_display == 'THANK YOU'
 
@@ -265,7 +265,7 @@ def test_current_amount_when_4q_and_select_cola_and_check_display_twice_expect_c
     expected = '$0.00'
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.QUARTER, 4)
-    class_under_test.select_cola()
+    class_under_test.select_product(Product.COLA)
     current_display = class_under_test.display
     assert current_display == 'THANK YOU'
     current_display = class_under_test.display
@@ -283,7 +283,7 @@ def test_display_when_3q_and_select_cola_expect_display_shows_price_1_pt_00():
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.QUARTER, 3)
     assert class_under_test.current_amount == '$0.75'
-    class_under_test.select_cola()
+    class_under_test.select_product(Product.COLA)
 
     # Act
     actual = class_under_test.display
@@ -296,7 +296,7 @@ def test_display_when_payment_3q_select_cola_and_check_display_expect_next_displ
     expected = 'INSERT COIN'
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.QUARTER, 3)
-    class_under_test.select_cola()
+    class_under_test.select_product(Product.COLA)
     current_display = class_under_test.display
     assert current_display == 'PRICE $1.00'
 
@@ -311,7 +311,7 @@ def test_current_amount_when_payment_3q_select_cola_and_check_display_expect_cur
     expected = '$0.75'
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.QUARTER, 3)
-    class_under_test.select_cola()
+    class_under_test.select_product(Product.COLA)
     current_display = class_under_test.display
     assert current_display == 'PRICE $1.00'
 
@@ -328,7 +328,7 @@ def test_select_chips_when_payment_2q_select_chips_expect_1_chips_dispensed():
     class_under_test.insert_coins(Coin.QUARTER, 2)
     
     # Act
-    actual = class_under_test.select_chips()
+    actual = class_under_test.select_product(Product.CHIPS)
 
     # Assert
     assert actual == expected
@@ -338,7 +338,7 @@ def test_display_when_payment_2q_and_chips_expect_display_shows_thank_you():
     expected = 'THANK YOU'
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.QUARTER, 2)
-    dispensed = class_under_test.select_chips()
+    dispensed = class_under_test.select_product(Product.CHIPS)
     assert dispensed == { 'chips': 1 }
 
     # Act
@@ -354,7 +354,7 @@ def test_select_chips_when_payment_3n_and_select_chips_expect_no_chips_dispensed
     class_under_test.insert_coins(Coin.NICKEL, 3)
 
     # Act
-    actual = class_under_test.select_chips()
+    actual = class_under_test.select_product(Product.CHIPS)
 
     # Assert
     assert actual == expected
@@ -363,7 +363,7 @@ def test_display_when_payment_3n_and_select_chips_expect_display_not_thank_you()
     # Arrange
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.NICKEL, 3)
-    class_under_test.select_chips()
+    class_under_test.select_product(Product.CHIPS)
 
     # Act
     actual = class_under_test.display
@@ -376,7 +376,7 @@ def test_current_amount_when_payment_5d_and_select_chips_expect_current_amount_i
     expected = '$0.00'
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.DIME, 5)
-    class_under_test.select_chips()
+    class_under_test.select_product(Product.CHIPS)
 
     # Act
     actual = class_under_test.current_amount
@@ -393,7 +393,7 @@ def test_display_when_payment_2q_1d_1n_and_select_candy_expect_1_candy_dispensed
     class_under_test.insert_coins(Coin.NICKEL, 1)
     
     # Act
-    actual = class_under_test.select_candy()
+    actual = class_under_test.select_product(Product.CANDY)
 
     # Assert
     assert actual == expected
@@ -405,7 +405,7 @@ def test_display_when_payment_2q_1d_1n_and_select_candy_expect_display_shows_tha
     class_under_test.insert_coins(Coin.QUARTER, 2)
     class_under_test.insert_coins(Coin.DIME, 1)
     class_under_test.insert_coins(Coin.NICKEL, 1)
-    class_under_test.select_candy()    
+    class_under_test.select_product(Product.CANDY)    
 
     # Act
     actual = class_under_test.display
@@ -421,7 +421,7 @@ def test_select_candy_when_payment_1q_1d_expect_no_candy_dispensed():
     class_under_test.insert_coins(Coin.DIME, 1)
 
     # Act
-    actual = class_under_test.select_candy()
+    actual = class_under_test.select_product(Product.CANDY)
 
     # Assert
     assert actual == expected
@@ -433,7 +433,7 @@ def test_current_amount_when_payment_2q_1d_1n_and_select_candy_and_display_ty_ex
     class_under_test.insert_coins(Coin.QUARTER, 2)
     class_under_test.insert_coins(Coin.DIME, 1)
     class_under_test.insert_coins(Coin.NICKEL, 1)
-    dispensed = class_under_test.select_candy()
+    dispensed = class_under_test.select_product(Product.CANDY)
     assert dispensed == { 'candy': 1 }
     message = class_under_test.display
     assert message == 'THANK YOU'
@@ -449,7 +449,7 @@ def test_display_when_payment_2q_and_select_candy_expect_display_is_price_0_pt_6
     expected = "PRICE $0.65"
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.QUARTER, 2)
-    class_under_test.select_candy()
+    class_under_test.select_product(Product.CANDY)
 
     # Act
     actual = class_under_test.display
@@ -462,7 +462,7 @@ def test_display_when_payment_3d_and_select_chips_expect_display_is_price_0_pt_5
     expected = "PRICE $0.50"
     class_under_test = VendingMachine()
     class_under_test.insert_coins(Coin.DIME, 3)
-    class_under_test.select_chips()
+    class_under_test.select_product(Product.CHIPS)
 
     # Act
     actual = class_under_test.display
