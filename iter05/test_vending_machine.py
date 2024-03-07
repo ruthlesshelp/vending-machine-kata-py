@@ -533,7 +533,7 @@ def test_coin_return_when_payment_7919q_7829d_7723n_select_candy_expect_coin_ret
 def test_display_when_chips_qty_0_and_payment_3q_and_select_chips_expect_display_shows_out_of_stock(class_under_test):
     # Arrange
     expected = 'OUT OF STOCK'
-    class_under_test.chips_stock = 0
+    class_under_test._stock['chips'] = 0
     class_under_test.insert_coins(CoinName.QUARTER, 1)
     class_under_test.select_product(Product.CHIPS)
 
@@ -546,7 +546,7 @@ def test_display_when_chips_qty_0_and_payment_3q_and_select_chips_expect_display
 def test_display_when_soda_qty_0_and_pay_5q_and_select_soda_expect_display_shows_out_of_stock(class_under_test):
     # Arrange
     expected = 'OUT OF STOCK'
-    class_under_test.soda_stock = 0
+    class_under_test._stock['cola'] = 0
     class_under_test.insert_coins(CoinName.QUARTER, 5)
     class_under_test.select_product(Product.COLA)
 
@@ -559,7 +559,7 @@ def test_display_when_soda_qty_0_and_pay_5q_and_select_soda_expect_display_shows
 def test_display_when_candy_qty_0_and_pay_3q_and_select_candy_expect_display_shows_out_of_stock(class_under_test):
     # Arrange
     expected = 'OUT OF STOCK'
-    class_under_test.candy_stock = 0
+    class_under_test._stock['candy'] = 0
     class_under_test.insert_coins(CoinName.QUARTER, 3)
     class_under_test.select_product(Product.CANDY)
 

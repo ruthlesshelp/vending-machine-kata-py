@@ -64,30 +64,6 @@ class VendingMachine:
 
     current_amount = property(get_current_amount, set_current_amount)
 
-    def get_soda_stock(self):
-        pass
-
-    def set_soda_stock(self, value):
-        self._stock['cola'] = value
-
-    soda_stock = property(get_soda_stock, set_soda_stock)
-
-    def get_chips_stock(self):
-        pass
-
-    def set_chips_stock(self, value):
-        self._stock['chips'] = value
-
-    chips_stock = property(get_chips_stock, set_chips_stock)
-
-    def get_candy_stock(self):
-        pass
-
-    def set_candy_stock(self, value):
-        self._stock['candy'] = value
-
-    candy_stock = property(get_candy_stock, set_candy_stock)
-
     # methods
     def return_coins(self) -> None:
         self.display = INSERT_COIN

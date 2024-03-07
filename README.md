@@ -209,3 +209,9 @@ expect display shows out of stock
 
 - Move stock into a private dictionary
 - Initialize stock by passing values in via the constructor
+
+### Refactoring
+
+- Change incorrect product name from "soda" to "cola"
+- Use the Product enum values instead of the strings
+- Remove the public accessors for the private stock dictionary
