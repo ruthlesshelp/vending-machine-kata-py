@@ -200,3 +200,10 @@ when payment 1 quarter
 and chips is pressed
 display shows PRICE $0.50
 expect coin return is empty
+
+## Test 41
+
+Test `coin_return` property
+when payment 3 quarters and 1 dime
+and candy is pressed
+expect coin return has 2 dimes

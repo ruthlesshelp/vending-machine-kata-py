@@ -1,5 +1,7 @@
 # vending_machine.py
 
+import math
+
 from enum import Enum
 
 class Coin(Enum):
@@ -99,22 +101,22 @@ class VendingMachine:
 
     def _make_change(self):
         coin_return = {}
-        total_cents = self._total_amount
+        total_cents = math.ceil(self._total_amount * 100.0)
 
-        quarters = int(total_cents / 0.25)
+        quarters = int(total_cents / 25)
         if quarters > 0:
             coin_return['quarter'] = quarters
-        total_cents -= quarters * 0.25
+        total_cents -= quarters * 25
 
-        dimes = int(total_cents / 0.10)
+        dimes = int(total_cents / 10)
         if dimes > 0:
             coin_return['dime'] = dimes
-        total_cents -= dimes * 0.10
+        total_cents -= dimes * 10
 
-        nickels = int(total_cents / 0.05)
+        nickels = int(total_cents / 5)
         if nickels > 0:
             coin_return['nickel'] = nickels
-        total_cents -= nickels * 0.05
+        total_cents -= nickels * 5
 
         return coin_return
 
