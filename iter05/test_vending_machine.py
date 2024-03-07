@@ -264,9 +264,9 @@ def test_display_when_4q_and_select_cola_and_check_display_expect_next_display_i
     # Assert
     assert actual == expected
 
-def test_current_amount_when_4q_and_select_cola_and_check_display_twice_expect_current_amount_0_pt_00(class_under_test):
+def test_display_when_4q_and_select_cola_and_check_display_twice_expect_display_insert_coin(class_under_test):
     # Arrange
-    expected = '$0.00'
+    expected = 'INSERT COIN'
     class_under_test.insert_coins(CoinName.QUARTER, 4)
     class_under_test.select_product(Product.COLA)
     current_display = class_under_test.display
@@ -275,7 +275,7 @@ def test_current_amount_when_4q_and_select_cola_and_check_display_twice_expect_c
     assert current_display == 'INSERT COIN'
 
     # Act
-    actual = class_under_test.current_amount
+    actual = class_under_test.display
 
     # Assert
     assert actual == expected
@@ -284,7 +284,7 @@ def test_display_when_3q_and_select_cola_expect_display_shows_price_1_pt_00(clas
     # Arrange
     expected = 'PRICE $1.00'
     class_under_test.insert_coins(CoinName.QUARTER, 3)
-    assert class_under_test.current_amount == '$0.75'
+    assert class_under_test.display == '$0.75'
     class_under_test.select_product(Product.COLA)
 
     # Act
@@ -293,21 +293,7 @@ def test_display_when_3q_and_select_cola_expect_display_shows_price_1_pt_00(clas
     # Assert
     assert actual == expected
 
-def test_display_when_payment_3q_select_cola_and_check_display_expect_next_display_is_insert_coin(class_under_test):
-    # Arrange
-    expected = 'INSERT COIN'
-    class_under_test.insert_coins(CoinName.QUARTER, 3)
-    class_under_test.select_product(Product.COLA)
-    current_display = class_under_test.display
-    assert current_display == 'PRICE $1.00'
-
-    # Act
-    actual = class_under_test.display
-
-    # Assert
-    assert actual == expected
-
-def test_current_amount_when_payment_3q_select_cola_and_check_display_expect_current_amount_shows_0_pt_75(class_under_test):
+def test_display_when_payment_3q_select_cola_and_check_display_expect_next_display_is_0_pt_75(class_under_test):
     # Arrange
     expected = '$0.75'
     class_under_test.insert_coins(CoinName.QUARTER, 3)
@@ -316,7 +302,21 @@ def test_current_amount_when_payment_3q_select_cola_and_check_display_expect_cur
     assert current_display == 'PRICE $1.00'
 
     # Act
-    actual = class_under_test.current_amount
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == expected
+
+def test_display_when_payment_3q_select_cola_and_check_display_expect_display_shows_0_pt_75(class_under_test):
+    # Arrange
+    expected = '$0.75'
+    class_under_test.insert_coins(CoinName.QUARTER, 3)
+    class_under_test.select_product(Product.COLA)
+    current_display = class_under_test.display
+    assert current_display == 'PRICE $1.00'
+
+    # Act
+    actual = class_under_test.display
 
     # Assert
     assert actual == expected
@@ -370,14 +370,18 @@ def test_display_when_payment_3n_and_select_chips_expect_display_not_thank_you(c
     # Assert
     assert actual != 'THANK YOU'
 
-def test_current_amount_when_payment_5d_and_select_chips_expect_current_amount_is_0_pt_00(class_under_test):
+def test_display_when_payment_5d_and_select_chips_expect_display_shows_insert_coin(class_under_test):
     # Arrange
-    expected = '$0.00'
+    expected = 'INSERT COIN'
     class_under_test.insert_coins(CoinName.DIME, 5)
     class_under_test.select_product(Product.CHIPS)
+    dispensed = class_under_test.output_box
+    assert dispensed == { 'chips': 1 }
+    message = class_under_test.display
+    assert message == 'THANK YOU'
 
     # Act
-    actual = class_under_test.current_amount
+    actual = class_under_test.display
 
     # Assert
     assert actual == expected
@@ -423,9 +427,9 @@ def test_select_candy_when_payment_1q_1d_expect_no_candy_dispensed(class_under_t
     # Assert
     assert actual == expected
 
-def test_current_amount_when_payment_2q_1d_1n_and_select_candy_and_display_ty_expect_display_0_pt_00(class_under_test):
+def test_display_when_payment_2q_1d_1n_and_select_candy_and_display_ty_expect_display_0_pt_00(class_under_test):
     # Arrange
-    expected = '$0.00'
+    expected = 'INSERT COIN'
     class_under_test.insert_coins(CoinName.QUARTER, 2)
     class_under_test.insert_coins(CoinName.DIME, 1)
     class_under_test.insert_coins(CoinName.NICKEL, 1)
@@ -436,12 +440,12 @@ def test_current_amount_when_payment_2q_1d_1n_and_select_candy_and_display_ty_ex
     assert message == 'THANK YOU'
 
     # Act
-    actual = class_under_test.current_amount
+    actual = class_under_test.display
 
     # Assert
     assert actual == expected
 
-def test_display_when_payment_2q_and_select_candy_expect_display_is_price_0_pt_65(class_under_test):
+def test_display_when_payment_2q_and_select_candy_expect_display_shows_price_0_pt_65(class_under_test):
     # Arrange
     expected = "PRICE $0.65"
     class_under_test.insert_coins(CoinName.QUARTER, 2)
@@ -453,7 +457,7 @@ def test_display_when_payment_2q_and_select_candy_expect_display_is_price_0_pt_6
     # Assert
     assert actual == expected
 
-def test_display_when_payment_3d_and_select_chips_expect_display_is_price_0_pt_50(class_under_test):
+def test_display_when_payment_3d_and_select_chips_expect_display_shows_price_0_pt_50(class_under_test):
     # Arrange
     expected = "PRICE $0.50"
     class_under_test.insert_coins(CoinName.DIME, 3)

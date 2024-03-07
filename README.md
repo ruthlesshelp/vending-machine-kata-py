@@ -236,3 +236,9 @@ when candy are out of stock
 and select candy
 and display shows sold out
 expect display now shows insert coin
+
+### Refactoring
+
+- Combined the display info for money and no money in the machine
+- Remove the `current_amount` property, it was never needed
+- Moved the SOLD OUT literal string into a constant

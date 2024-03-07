@@ -19,6 +19,7 @@ class Product(Enum):
 # Messages
 INSERT_COIN = 'INSERT COIN' # when no coins inserted
 THANK_YOU = 'THANK YOU'     # after product dispensed
+SOLD_OUT = 'SOLD OUT'       # when product not in stock
 
 
 class VendingMachine:
@@ -34,16 +35,9 @@ class VendingMachine:
     def get_display(self):
         current_display = self._display
 
-        if self._display == 'SOLD OUT':
-            if self._total_amount > 0:
-                self._display = f'${self._total_amount:.2f}'
-            else:
-                self._display = INSERT_COIN
-
-        if self._display == THANK_YOU:
-            self._display = INSERT_COIN
-
-        if self._display == 'PRICE $1.00':
+        if self._total_amount > 0:
+            self._display = f'${self._total_amount:.2f}'
+        else:
             self._display = INSERT_COIN
 
         return current_display
@@ -52,14 +46,6 @@ class VendingMachine:
         self._display = display
 
     display = property(get_display, set_display)
-
-    def get_current_amount(self):
-        return f'${self._total_amount:.2f}'
-
-    def set_current_amount(self):
-        pass
-
-    current_amount = property(get_current_amount, set_current_amount)
 
     # methods
     def return_coins(self) -> None:
@@ -91,13 +77,13 @@ class VendingMachine:
             self.rejects += coins
 
         self._total_amount += amount
-        self.display = self.current_amount
+        self.display = f'${self._total_amount:.2f}'
 
     def select_product(self, product: Product) -> None:
         dispense = {}
 
         if self._stock[product.value] == 0:
-            self.display = 'SOLD OUT'
+            self.display = SOLD_OUT
             return
 
         price = self._prices[product]
