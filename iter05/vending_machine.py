@@ -35,7 +35,10 @@ class VendingMachine:
         current_display = self._display
 
         if self._display == 'SOLD OUT':
-            self._display = f'${self._total_amount:.2f}'
+            if self._total_amount > 0:
+                self._display = f'${self._total_amount:.2f}'
+            else:
+                self._display = INSERT_COIN
 
         if self._display == THANK_YOU:
             self._display = INSERT_COIN

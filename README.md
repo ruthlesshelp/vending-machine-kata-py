@@ -228,3 +228,11 @@ expect display shows $0.75
 ### Fix defect
 
 - The display is supposed to show SOLD OUT, not out of stock
+
+### Test 47
+
+Test `display` property
+when candy are out of stock
+and select candy
+and display shows sold out
+expect display now shows insert coin
