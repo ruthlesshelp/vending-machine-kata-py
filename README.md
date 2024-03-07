@@ -341,3 +341,9 @@ when payment 2 quarters, 1 dime, and 1 nickel
 and candy is pressed
 and display shows THANK YOU
 expect current amount now shows $0.00
+
+### Refactoring
+
+- added Candy to the Product enum
+- added Candy price to dictionary of prices
+- changed code to use new item
