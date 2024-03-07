@@ -220,3 +220,9 @@ and insert 7829 dimes
 and insert 7723 nickels
 and candy is pressed
 expect coin return has 12592 quarters, 1 dime, 1 nickel
+
+## Refactoring
+
+- Change the behavior of the `return_coins` method
+- Have it put the coins in the `coin_return` property and return None
+- Change the tests to look in the `coin_return` for the returned change

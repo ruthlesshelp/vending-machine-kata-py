@@ -54,19 +54,19 @@ class VendingMachine:
     current_amount = property(get_current_amount, set_current_amount)
 
     # methods
-    def return_coins(self):
+    def return_coins(self) -> None:
         self.display = INSERT_COIN
-        return_slot = {}
+        coin_return = {}
         if self.nickels > 0:
-            return_slot['nickels'] = self.nickels
+            coin_return['nickel'] = self.nickels
         if self.dimes > 0:
-            return_slot['dimes'] = self.dimes
+            coin_return['dime'] = self.dimes
         if self.quarters > 0:
-            return_slot['quarters'] = self.quarters
+            coin_return['quarter'] = self.quarters
         if self.rejects > 0:
-            return_slot['rejects'] = self.rejects
+            coin_return['reject'] = self.rejects
 
-        return return_slot
+        self.coin_return = coin_return
 
     def insert_coins(self, coin_type: Coin, coins: int):
         amount = 0

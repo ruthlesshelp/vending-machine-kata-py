@@ -21,32 +21,35 @@ def class_under_test(vending_machine_instance) -> VendingMachine:
 
 def test_return_coins_when_no_payment_expect_0_returned(class_under_test):
     # Arrange
+    class_under_test.return_coins()
 
     # Act
-    actual = class_under_test.return_coins()
+    actual = class_under_test.coin_return
 
     # Assert
-    assert 'quarters' not in actual
+    assert 'quarter' not in actual
 
 def test_return_coins_when_1_coin_payment_expect_1_coin_returned(class_under_test):
     # Arrange
     class_under_test.insert_coins(Coin.QUARTER, 1)
+    class_under_test.return_coins()
 
     # Act
-    actual = class_under_test.return_coins()
+    actual = class_under_test.coin_return
 
     # Assert
-    assert actual['quarters'] == 1
+    assert actual['quarter'] == 1
 
 def test_return_coins_when_7_coin_payment_expect_7_coin_returned(class_under_test):
     # Arrange
     class_under_test.insert_coins(Coin.QUARTER, 7)
+    class_under_test.return_coins()
 
     # Act
-    actual = class_under_test.return_coins()
+    actual = class_under_test.coin_return
 
     # Assert
-    assert actual['quarters'] == 7
+    assert actual['quarter'] == 7
 
 def test_display_when_0_coin_payment_expect_display_shows_insert_coin(class_under_test):
     # Arrange
@@ -160,36 +163,39 @@ def test_display_when_4_quarter_payment_expect_display_1_pt_00(class_under_test)
 
 def test_return_coins_when_3n_5d_7q_expect_3n_5d_7q_returned(class_under_test):
     # Arrange
-    expected = {'nickels': 3, 'dimes': 5, 'quarters': 7}
+    expected = {'nickel': 3, 'dime': 5, 'quarter': 7}
     class_under_test.insert_coins(Coin.NICKEL, 3)
     class_under_test.insert_coins(Coin.DIME, 5)
     class_under_test.insert_coins(Coin.QUARTER, 7)
+    class_under_test.return_coins()
 
     # Act
-    actual = class_under_test.return_coins()
+    actual = class_under_test.coin_return
 
     # Assert
     assert actual == expected
 
 def test_return_coins_when_11_pennies_expect_11_rejects_returned(class_under_test):
     # Arrange
-    expected = {'rejects': 11}
+    expected = {'reject': 11}
     class_under_test.insert_coins(Coin.PENNY, 11)
+    class_under_test.return_coins()
 
     # Act
-    actual = class_under_test.return_coins()
+    actual = class_under_test.coin_return
 
     # Assert
     assert actual == expected
 
 def test_return_coins_when_17_slugs_expect_17_rejects_returned(class_under_test):
     # Arrange
-    expected = {'rejects': 17}
+    expected = {'reject': 17}
     class_under_test.insert_coins('plug nickel', 5)
     class_under_test.insert_coins('blank slug', 12)
+    class_under_test.return_coins()
 
     # Act
-    actual = class_under_test.return_coins()
+    actual = class_under_test.coin_return
 
     # Assert
     assert actual == expected
