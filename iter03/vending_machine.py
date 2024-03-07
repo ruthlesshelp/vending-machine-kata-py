@@ -1,3 +1,6 @@
+# vending_machine.py
+
+import time
 from enum import Enum
 
 class Coin(Enum):
@@ -21,12 +24,8 @@ class VendingMachine:
     _prices = { Product.COLA: 1.00, Product.CHIPS: 0.50, Product.CANDY: 0.65 }
 
     def __init__(self):
-        self._total_amount = 0
-        self.nickels = 0
-        self.dimes = 0
-        self.quarters = 0
-        self.rejects = 0
-        self._display = INSERT_COIN
+        time.sleep(2)
+        self._reset()
 
     # properties
     def get_display(self):
@@ -97,3 +96,12 @@ class VendingMachine:
             self.display = f'PRICE ${price:.2f}'
 
         return dispense
+
+    # private testability enhancement
+    def _reset(self):
+        self._total_amount = 0
+        self.nickels = 0
+        self.dimes = 0
+        self.quarters = 0
+        self.rejects = 0
+        self._display = INSERT_COIN
