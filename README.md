@@ -196,3 +196,11 @@ when soda are out of stock
 and insert 5 quarters
 and select soda
 expect display shows out of stock
+
+### Test 45
+
+Test `display` property
+when candy are out of stock
+and insert 3 quarters
+and select candy
+expect display shows out of stock

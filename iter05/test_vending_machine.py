@@ -554,3 +554,16 @@ def test_display_when_soda_qty_0_and_pay_5q_and_select_soda_expect_display_shows
 
     # Assert
     assert actual == expected
+
+def test_display_when_candy_qty_0_and_pay_3q_and_select_candy_expect_display_shows_out_of_stock(class_under_test):
+    # Arrange
+    expected = 'OUT OF STOCK'
+    class_under_test.candy_stock = 0
+    class_under_test.insert_coins(CoinName.QUARTER, 3)
+    class_under_test.select_product(Product.CANDY)
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == expected
