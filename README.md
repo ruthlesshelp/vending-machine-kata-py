@@ -347,3 +347,10 @@ expect current amount now shows $0.00
 - added Candy to the Product enum
 - added Candy price to dictionary of prices
 - changed code to use new item
+
+### Test 36
+
+Test `display` property
+when payment 2 quarters (not enough money)
+and candy is pressed
+expect display shows PRICE $0.65
