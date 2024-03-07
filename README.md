@@ -179,3 +179,9 @@ _I want to be told when exact change is required,_
 _so that I can determine if I can buy something with the money I have before inserting it_
 
 When the machine is not able to make change with the money in the machine for any of the items that it sells, it will display EXACT CHANGE ONLY instead of INSERT COIN.
+
+### Test 48
+
+Test display
+when unable to make change
+expect display shows exact change only

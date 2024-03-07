@@ -601,3 +601,14 @@ def test_display_when_candy_out_and_select_candy_and_display_sold_out_expect_dis
 
     # Assert
     assert actual == expected
+
+def test_display_when_unable_to_make_change_expect_display_shows_exact_change_only(class_under_test):
+    # Arrange
+    expected = 'EXACT CHANGE ONLY'
+    class_under_test._coins_for_change = {}
+    
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == expected
