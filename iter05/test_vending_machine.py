@@ -8,7 +8,8 @@ from vending_machine import VendingMachine, CoinName, Product
 @pytest.fixture(scope="module")
 def vending_machine_instance():
     # before all setup
-    vending_machine = VendingMachine()
+    initial_stock = { 'cola': 103, 'chips': 157, 'candy': 59 }
+    vending_machine = VendingMachine(stock=initial_stock)
     yield vending_machine
     # after all tear down
 

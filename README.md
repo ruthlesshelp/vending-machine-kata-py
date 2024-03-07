@@ -204,3 +204,8 @@ when candy are out of stock
 and insert 3 quarters
 and select candy
 expect display shows out of stock
+
+### Refactoring
+
+- Move stock into a private dictionary
+- Initialize stock by passing values in via the constructor

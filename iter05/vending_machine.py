@@ -25,19 +25,20 @@ class VendingMachine:
     # prices for each product
     _prices = { Product.COLA: 1.00, Product.CHIPS: 0.50, Product.CANDY: 0.65 }
 
-    def __init__(self):
+    def __init__(self, stock):
         # time.sleep(2) # Use a 2 sec sleep to simulate a long initialization.
         self._reset()
+        self._stock = stock
 
     # properties
     def get_display(self):
-        if self.chips_stock == 0:
+        if self._stock['cola'] == 0:
             return 'OUT OF STOCK'
 
-        if self.soda_stock == 0:
+        if self._stock['chips'] == 0:
             return 'OUT OF STOCK'
 
-        if self.candy_stock == 0:
+        if self._stock['candy'] == 0:
             return 'OUT OF STOCK'
 
         current_display = self._display
@@ -62,6 +63,30 @@ class VendingMachine:
         pass
 
     current_amount = property(get_current_amount, set_current_amount)
+
+    def get_soda_stock(self):
+        pass
+
+    def set_soda_stock(self, value):
+        self._stock['cola'] = value
+
+    soda_stock = property(get_soda_stock, set_soda_stock)
+
+    def get_chips_stock(self):
+        pass
+
+    def set_chips_stock(self, value):
+        self._stock['chips'] = value
+
+    chips_stock = property(get_chips_stock, set_chips_stock)
+
+    def get_candy_stock(self):
+        pass
+
+    def set_candy_stock(self, value):
+        self._stock['candy'] = value
+
+    candy_stock = property(get_candy_stock, set_candy_stock)
 
     # methods
     def return_coins(self) -> None:
@@ -139,7 +164,4 @@ class VendingMachine:
         self.rejects = 0
         self.coin_return = {}
         self.output_box = {}
-        self.chips_stock = 157
-        self.soda_stock = 103
-        self.candy_stock = 59
         self._display = INSERT_COIN
