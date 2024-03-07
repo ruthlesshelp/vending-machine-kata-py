@@ -461,3 +461,15 @@ def test_coin_return_when_payment_7q_and_select_chips_expect_coin_return_has_5q(
 
     # Arrange
     assert actual == expected
+
+def test_coin_return_when_payment_9d_and_select_chips_expect_coin_return_has_1q_1d_1n(class_under_test):
+    # Arrange
+    expected = { 'quarter': 1, 'dime': 1, 'nickel': 1 }
+    class_under_test.insert_coins(Coin.DIME, 9)
+    class_under_test.select_product(Product.CHIPS)
+
+    # Act
+    actual = class_under_test.coin_return
+
+    # Assert
+    assert actual == expected

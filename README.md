@@ -185,3 +185,10 @@ Test `coin_return` property
 when payment 7 quarters
 and chips is pressed
 expect coin return has 5 quarters
+
+## Test 39
+
+Test `coin_return` property
+when payment 9 dimes
+and chips is pressed
+expect coin return has 1 quarter, 1 dime, and 1 nickel

@@ -94,9 +94,30 @@ class VendingMachine:
         else:
             self.display = f'PRICE ${price:.2f}'
 
-        self.coin_return = { 'quarter': 5 }
+        self.coin_return = self._make_change()
 
         return dispense
+
+    def _make_change(self):
+        coin_return = {}
+        total_cents = self._total_amount
+
+        quarters = int(total_cents / 0.25)
+        if quarters > 0:
+            coin_return['quarter'] = quarters
+        total_cents -= quarters * 0.25
+
+        dimes = int(total_cents / 0.10)
+        if dimes > 0:
+            coin_return['dime'] = dimes
+        total_cents -= dimes * 0.10
+
+        nickels = int(total_cents / 0.05)
+        if nickels > 0:
+            coin_return['nickel'] = nickels
+        total_cents -= nickels * 0.05
+
+        return coin_return
 
     # private testability enhancement
     def _reset(self):
