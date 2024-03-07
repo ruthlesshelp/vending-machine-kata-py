@@ -234,9 +234,13 @@ from vending_machine import VendingMachine, Coin, Product
 
 @pytest.fixture(scope="module")
 def vending_machine_instance():
+    # before all setup
     vending_machine = VendingMachine()
     yield vending_machine
+    # after all tear down
 ```
+
+For more info on the use of `yield` see the yield fixtures section of [How to use fixtures](https://docs.pytest.org/en/latest/how-to/fixtures.html#yield-fixtures-recommended).
 
 And rewrite all the tests so they fit this pattern:
 ```python
@@ -278,9 +282,10 @@ class VendingMachine:
 This allows us to add a second fixture with the "function" scope, like this:
 ```python
 @pytest.fixture(scope="function")
-def class_under_test(vending_machine_instance):
+def class_under_test(vending_machine_instance) -> VendingMachine:
+    # before test setup
     vending_machine_instance._reset()
-    yield vending_machine_instance
+    return vending_machine_instance
 ```
 
 And change all the tests so they fit this pattern:

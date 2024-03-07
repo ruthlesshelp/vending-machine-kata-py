@@ -1,6 +1,5 @@
 # vending_machine.py
 
-import time
 from enum import Enum
 
 class Coin(Enum):
@@ -24,7 +23,7 @@ class VendingMachine:
     _prices = { Product.COLA: 1.00, Product.CHIPS: 0.50, Product.CANDY: 0.65 }
 
     def __init__(self):
-        time.sleep(2)
+        # time.sleep(2) # Use a 2 sec sleep to simulate a long initialization.
         self._reset()
 
     # properties

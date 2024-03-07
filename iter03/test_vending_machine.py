@@ -7,18 +7,17 @@ from vending_machine import VendingMachine, Coin, Product
 # This function runs once, at the start of this module
 @pytest.fixture(scope="module")
 def vending_machine_instance():
-    # setup
+    # before all setup
     vending_machine = VendingMachine()
     yield vending_machine
-    # tear down
+    # after all tear down
 
 # This function runs before each test function
 @pytest.fixture(scope="function")
-def class_under_test(vending_machine_instance):
-    # setup
+def class_under_test(vending_machine_instance) -> VendingMachine:
+    # before test setup
     vending_machine_instance._reset()
-    yield vending_machine_instance
-    # tear down
+    return vending_machine_instance
 
 def test_return_coins_when_no_payment_expect_0_returned(class_under_test):
     # Arrange
