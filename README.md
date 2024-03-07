@@ -327,3 +327,9 @@ Test `display` property
 when payment 2 quarters, 1 dime, and 1 nickel
 and candy is pressed
 expect display shows THANK YOU
+
+### Test 34
+
+Test `select_candy` method
+when payment 1 quarter and 1 dime (not enough money)
+expect candy is not dispensed
