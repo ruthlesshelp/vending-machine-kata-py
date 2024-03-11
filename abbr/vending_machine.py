@@ -7,3 +7,6 @@ class VendingMachine:
 
     def  insert_payment(self, quarters):
         self._payment = quarters
+
+    def select_product(self):
+        return 0

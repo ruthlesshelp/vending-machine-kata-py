@@ -29,3 +29,18 @@ expect no coins returned
 Test `release_payment`
 when there is money inserted
 expect the proper number of quarters are returned
+
+## Select Product
+
+_As a vendor_
+_I want customers to select products_
+_So that I can give them an incentive to put money in the machine_
+
+- There is one product, cola for $1.00
+- If enough payment is inserted and product is selected, the product is dispensed and the machine displays THANK YOU.
+
+## Test 03
+
+Test `select_product`
+when no payment
+expect no product dispensed
