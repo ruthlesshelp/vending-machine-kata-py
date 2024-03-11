@@ -44,3 +44,9 @@ _So that I can give them an incentive to put money in the machine_
 Test `select_product`
 when no payment
 expect no product dispensed
+
+## Test 04
+
+Test `select_product`
+when 4 quarters ($1.00) payment
+expect product dispensed equals 1

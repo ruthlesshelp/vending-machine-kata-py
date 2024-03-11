@@ -9,4 +9,6 @@ class VendingMachine:
         self._payment = quarters
 
     def select_product(self):
+        if self._payment >= 4:
+            return 1
         return 0

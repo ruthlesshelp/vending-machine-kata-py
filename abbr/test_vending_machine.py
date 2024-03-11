@@ -31,3 +31,14 @@ def test_select_product_when_no_payment_expect_no_product_dispensed():
 
     # Assert
     assert actual == 0
+
+def test_select_product_when_4q_payment_expect_product_dispensed_eq_1():
+    # Arrange
+    class_under_test = VendingMachine()
+    class_under_test.insert_payment(4)
+
+    # Act
+    actual = class_under_test.select_product()
+
+    # Assert
+    assert actual == 1
