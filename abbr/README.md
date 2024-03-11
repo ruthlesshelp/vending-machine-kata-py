@@ -66,3 +66,9 @@ expect raised error (RuntimeError)
 Test `display`
 when product dispensed
 expect shows THANK YOU
+
+## Refactoring
+
+### Test Fixture: Before Test
+
+Remove repetitive class-under-test instantiation.
