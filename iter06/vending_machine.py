@@ -36,7 +36,7 @@ class VendingMachine:
     def get_display(self):
         current_display = self._display
 
-        if self._coins_for_change == {}:
+        if self._coins_for_change == {} or self._coins_for_change[CoinName.NICKEL] <= 0:
             return 'EXACT CHANGE ONLY'
 
         if self._total_amount > 0:
