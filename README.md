@@ -4,6 +4,8 @@ Practicing the Vending Machine Kata in Python
 
 This Kata is by Guy Royse. You can find more info: [Vending Machine Kata](https://github.com/guyroyse/vending-machine-kata)
 
+**Note:** There's an abbreviated version of this Kata under the `abbr` folder. See the Abbreviated [Read Me](./abbr/README.md)
+
 ## Overview
 
 In this exercise, you're asked to create the core functionality of a vending machine. This includes accepting and managing money, providing change, keeping track of inventory, and dispensing items. Essentially, it should perform all the typical operations one would anticipate from a vending machine.
