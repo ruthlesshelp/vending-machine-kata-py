@@ -130,3 +130,9 @@ _So that I can account for the payments_
 
 - Vending machine handles coins (quarters)
 - Payment processor handles money (cents)
+
+## Mock The Database Calls
+
+Test the `retrieve` and `save` calls without the actual calls to the database.
+
+Let's use `unittest` patch function decorator. More on [patch](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.patch)
