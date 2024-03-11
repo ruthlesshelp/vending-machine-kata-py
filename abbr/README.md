@@ -72,3 +72,16 @@ expect shows THANK YOU
 ### Test Fixture: Before Test
 
 Remove repetitive class-under-test instantiation.
+
+### Single Responsibility Principle (SRP)
+
+Reasons to change:
+- Product (select and dispense)
+- Payment (accept, pay, release)
+- Display
+
+Separate out the payment processor from the vending machine.
+
+Payment Processor
+- `make_payment` accepts coins as payment
+- `is_payment_made` determines if payment is made
