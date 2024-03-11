@@ -125,3 +125,8 @@ _So that I can account for the payments_
 - Payment DAO
   * `retrieve` method returns money (int)
   * `save` method takes money (int) returns void
+
+## Refactoring
+
+- Vending machine handles coins (quarters)
+- Payment processor handles money (cents)

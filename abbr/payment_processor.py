@@ -8,11 +8,9 @@ class PaymentProcessor:
     def get_payment(self):
         return self._dao.retrieve()
 
-    payment = property(get_payment)
-
     def is_payment_made(self):
-        payment = self._dao.retrieve()
-        return payment >=4
+        payment = self.get_payment()
+        return payment >= 100
 
     def make_payment(self, coins):
         self._dao.save(coins)

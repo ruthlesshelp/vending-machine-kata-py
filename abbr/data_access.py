@@ -5,7 +5,9 @@ class PaymentDao:
         self._storage = { PAYMENT_TABLE: initial_value }
 
     def retrieve(self) -> int:
+        print('Calling PaymentDao.retrieve()')
         return self._storage[PAYMENT_TABLE]
 
     def save(self, payment: int) -> None:
+        print('Calling PaymentDao.save()')
         self._storage[PAYMENT_TABLE] = payment
