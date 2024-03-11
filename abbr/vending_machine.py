@@ -1,6 +1,9 @@
 class VendingMachine:
     def __init__(self):
-        pass
+        self._payment = 0
 
     def release_payment(self):
-        return 0
+        return self._payment
+
+    def  insert_payment(self, quarters):
+        self._payment = quarters

@@ -23,3 +23,9 @@ When the release payment button is pressed, the coins the customer placed in the
 Test `release_payment`
 when no payment
 expect no coins returned
+
+### Test 02
+
+Test `release_payment`
+when there is money inserted
+expect the proper number of quarters are returned
