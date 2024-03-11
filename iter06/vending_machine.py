@@ -30,13 +30,12 @@ class VendingMachine:
         # time.sleep(2) # Use a 2 sec sleep to simulate a long initialization.
         self._reset()
         self._stock = stock
-        self._coins_for_change = { CoinName.QUARTER: 5, CoinName.DIME: 7, CoinName.NICKEL: 11 }
 
     # properties
     def get_display(self):
         current_display = self._display
 
-        if self._coins_for_change == {} or self._coins_for_change[CoinName.NICKEL] <= 0:
+        if self._coins_for_change == {} or self._coins_for_change[CoinName.NICKEL] <= 0 or self._coins_for_change[CoinName.DIME] <= 0:
             return 'EXACT CHANGE ONLY'
 
         if self._total_amount > 0:
@@ -133,3 +132,4 @@ class VendingMachine:
         self.coin_return = {}
         self.output_box = {}
         self._display = INSERT_COIN
+        self._coins_for_change = { CoinName.QUARTER: 5, CoinName.DIME: 7, CoinName.NICKEL: 11 }

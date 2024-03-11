@@ -215,3 +215,9 @@ So, if there are no nickels or dimes for change, then the machine cannot make ch
 Test display
 when no nickels to make change
 expect display shows exact change only
+
+### Test 50
+
+Test display
+when no dimes to make change
+expect display shows exact change only

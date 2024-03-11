@@ -623,3 +623,14 @@ def test_display_when_no_nickels_for_change_expect_display_shows_exact_change_on
 
     # Assert
     assert actual == expected
+
+def test_display_when_no_dimes_for_change_expect_display_shows_exact_change_only(class_under_test):
+    # Arrange
+    expected = 'EXACT CHANGE ONLY'
+    class_under_test._coins_for_change[CoinName.DIME] = 0
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == expected
