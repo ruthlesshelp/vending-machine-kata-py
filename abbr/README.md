@@ -113,3 +113,15 @@ Expect false
 Test `is_payment_made`
 When payment of four quarters
 Expect True
+
+## Payment Storage
+
+Let's introduce a way to save the running total of payments.
+
+_As a vendor,_
+_I want the total of payments collected saved to a database,_
+_So that I can account for the payments_
+
+- Payment DAO
+  * `retrieve` method returns money (int)
+  * `save` method takes money (int) returns void
