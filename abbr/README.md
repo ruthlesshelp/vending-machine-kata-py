@@ -39,29 +39,29 @@ _So that I can give them an incentive to put money in the machine_
 - There is one product, cola for $1.00
 - If enough payment is inserted and product is selected, the product is dispensed and the machine displays THANK YOU.
 
-## Test 03
+### Test 03
 
 Test `select_product`
 when no payment
 expect no product dispensed
 
-## Test 04
+### Test 04
 
 Test `select_product`
 when 4 quarters ($1.00) payment
 expect product dispensed equals 1
 
-## Change in requirement
+### Change in requirement
 
 ~~Test `select_product` with no payment expect no product dispensed~~
 
-## Test 03 - Revised
+### Test 03 - Revised
 
 Test `select_product`
 when no payment
 expect raised error (RuntimeError)
 
-## Test 05
+### Test 05
 
 Test `display`
 when product dispensed
