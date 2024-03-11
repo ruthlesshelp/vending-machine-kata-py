@@ -1,6 +1,7 @@
 class VendingMachine:
     def __init__(self):
         self._payment = 0
+        self.display = 'THANK YOU'
 
     def release_payment(self):
         return self._payment

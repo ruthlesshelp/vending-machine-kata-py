@@ -44,3 +44,16 @@ def test_select_product_when_4q_payment_expect_product_dispensed_eq_1():
 
     # Assert
     assert actual == 1
+
+def test_display_when_4q_and_product_dispensed_expect_shows_thank_you():
+    # Arrange
+    expected = 'THANK YOU'
+    class_under_test = VendingMachine()
+    class_under_test.insert_payment(4)
+    class_under_test.select_product()
+
+    # Act
+    actual = class_under_test.display
+
+    # Assert
+    assert actual == expected

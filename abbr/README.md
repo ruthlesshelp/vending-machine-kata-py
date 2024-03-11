@@ -60,3 +60,9 @@ expect product dispensed equals 1
 Test `select_product`
 when no payment
 expect raised error (RuntimeError)
+
+## Test 05
+
+Test `display`
+when product dispensed
+expect shows THANK YOU
