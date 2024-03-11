@@ -11,4 +11,4 @@ class VendingMachine:
     def select_product(self):
         if self._payment >= 4:
             return 1
-        return 0
+        raise RuntimeError

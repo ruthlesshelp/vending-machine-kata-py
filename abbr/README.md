@@ -50,3 +50,13 @@ expect no product dispensed
 Test `select_product`
 when 4 quarters ($1.00) payment
 expect product dispensed equals 1
+
+## Change in requirement
+
+~~Test `select_product` with no payment expect no product dispensed~~
+
+## Test 03 - Revised
+
+Test `select_product`
+when no payment
+expect raised error (RuntimeError)
