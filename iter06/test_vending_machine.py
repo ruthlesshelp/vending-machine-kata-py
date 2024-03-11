@@ -9,7 +9,8 @@ from vending_machine import VendingMachine, CoinName, Product
 def vending_machine_instance():
     # before all setup
     initial_stock = { 'cola': 103, 'chips': 157, 'candy': 59 }
-    vending_machine = VendingMachine(stock=initial_stock)
+    initial_coins_for_change = { CoinName.QUARTER: 5 , CoinName.DIME: 7, CoinName.NICKEL: 11 }
+    vending_machine = VendingMachine(stock=initial_stock, coins_for_change=initial_coins_for_change)
     yield vending_machine
     # after all tear down
 
@@ -18,6 +19,10 @@ def vending_machine_instance():
 def class_under_test(vending_machine_instance) -> VendingMachine:
     # before test setup
     vending_machine_instance._reset()
+    # restock products
+    vending_machine_instance._stock = { 'cola': 103, 'chips': 157, 'candy': 59 }
+    # reset coins for change
+    vending_machine_instance._coins_for_change = { CoinName.QUARTER: 5 , CoinName.DIME: 7, CoinName.NICKEL: 11 }
     return vending_machine_instance
 
 def test_return_coins_when_no_payment_expect_0_returned(class_under_test):
@@ -616,7 +621,7 @@ def test_display_when_unable_to_make_change_expect_display_shows_exact_change_on
 def test_display_when_no_nickels_for_change_expect_display_shows_exact_change_only(class_under_test):
     # Arrange
     expected = 'EXACT CHANGE ONLY'
-    class_under_test._coins_for_change[CoinName.NICKEL] = 0
+    class_under_test._coins_for_change = { CoinName.QUARTER: 5 , CoinName.DIME: 7, CoinName.NICKEL: 0 }
 
     # Act
     actual = class_under_test.display
@@ -627,7 +632,7 @@ def test_display_when_no_nickels_for_change_expect_display_shows_exact_change_on
 def test_display_when_no_dimes_for_change_expect_display_shows_exact_change_only(class_under_test):
     # Arrange
     expected = 'EXACT CHANGE ONLY'
-    class_under_test._coins_for_change[CoinName.DIME] = 0
+    class_under_test._coins_for_change = { CoinName.QUARTER: 5 , CoinName.DIME: 0, CoinName.NICKEL: 11 }
 
     # Act
     actual = class_under_test.display

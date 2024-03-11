@@ -221,3 +221,11 @@ expect display shows exact change only
 Test display
 when no dimes to make change
 expect display shows exact change only
+
+### Refactoring
+
+- Move string to constant.
+- Revamp the coins for change logic.
+- Guard against missing change maker coins.
+- Before each test restock and reset coins for change.
+- Set the initial coins more precisely for the two tests

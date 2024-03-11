@@ -20,23 +20,25 @@ class Product(Enum):
 INSERT_COIN = 'INSERT COIN' # when no coins inserted
 THANK_YOU = 'THANK YOU'     # after product dispensed
 SOLD_OUT = 'SOLD OUT'       # when product not in stock
+EXACT_CHANGE_ONLY = 'EXACT CHANGE ONLY' # when no coins to make change
 
 
 class VendingMachine:
     # prices for each product
     _prices = { Product.COLA: 1.00, Product.CHIPS: 0.50, Product.CANDY: 0.65 }
 
-    def __init__(self, stock):
+    def __init__(self, stock, coins_for_change):
         # time.sleep(2) # Use a 2 sec sleep to simulate a long initialization.
         self._reset()
         self._stock = stock
+        self._coins_for_change = coins_for_change
 
     # properties
     def get_display(self):
         current_display = self._display
 
-        if self._coins_for_change == {} or self._coins_for_change[CoinName.NICKEL] <= 0 or self._coins_for_change[CoinName.DIME] <= 0:
-            return 'EXACT CHANGE ONLY'
+        if self._has_change() == False:
+            return EXACT_CHANGE_ONLY
 
         if self._total_amount > 0:
             self._display = f'${self._total_amount:.2f}'
@@ -101,6 +103,16 @@ class VendingMachine:
 
         self.output_box = dispense
 
+    def _has_change(self):
+        if self._coins_for_change == {}:
+            return False
+        elif CoinName.NICKEL not in self._coins_for_change.keys() or self._coins_for_change[CoinName.NICKEL] <= 0:
+            return False
+        elif CoinName.DIME not in self._coins_for_change.keys() or self._coins_for_change[CoinName.DIME] <= 0:
+            return False
+
+        return True
+
     def _make_change(self):
         coin_return = {}
         total_cents = math.ceil(self._total_amount * 100.0)
@@ -132,4 +144,3 @@ class VendingMachine:
         self.coin_return = {}
         self.output_box = {}
         self._display = INSERT_COIN
-        self._coins_for_change = { CoinName.QUARTER: 5, CoinName.DIME: 7, CoinName.NICKEL: 11 }
