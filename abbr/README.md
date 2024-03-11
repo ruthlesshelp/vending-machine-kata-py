@@ -85,3 +85,31 @@ Separate out the payment processor from the vending machine.
 Payment Processor
 - `make_payment` accepts coins as payment
 - `is_payment_made` determines if payment is made
+
+## Unit Test Payment Processor
+
+New `test_payment_processor.py` file.
+
+### Test 06
+
+Test `make_payment`
+When no payment
+Expect payment is 0
+
+### Test 07
+
+Test `make_payment`
+When payment of four quarters
+Expect payment is 4
+
+### Test 08
+
+Test `is_payment_made`
+When no payment
+Expect false
+
+### Test 09
+
+Test `is_payment_made`
+When payment of four quarters
+Expect True
